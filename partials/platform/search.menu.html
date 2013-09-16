@@ -1,0 +1,4 @@
+<li><a href ng-click="select(false)">All</a></li>
+<div ng-repeat="item in list">
+    <li><a href ng-click="select(valueFn(item))">{{displayFn(item) | inflector}}</a></li>
+</div>

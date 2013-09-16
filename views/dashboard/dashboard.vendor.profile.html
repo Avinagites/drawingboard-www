@@ -1,0 +1,61 @@
+<div class="main-container">
+  <div id="main-content" class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="span3 sidebar">
+            <ul class="nav nav-list">
+              <li class="nav-header">Account</li>
+              <li><a href="/#/dashboard.vendor.listing">My Listing</a></li>
+              <li class="active"><a href>My Profile</a></li>
+            </ul>
+          </div>
+          <div class="span9">
+            <div class="content-main">
+              <h3>My Profile</h3>
+              <div class="row-fluid">
+                <form name="form" novalidate ng-submit="submitForm()">
+                  <div class="span12">
+                    <div class="row-fluid control-group" ng-class="{error: (hasError(form.first_name) || hasError(form.last_name))}">
+                      <div class="span2"><label>First Name*</label></div>
+                      <div class="span4"><input ng-model="current_user.first_name" type="text" name="first_name" required></div>
+                      <div class="span2"><label>Last Name*</label></div>
+                      <div class="span4"><input ng-model="current_user.last_name" type="text" name="last_name" required></div>
+                    </div>
+
+                    <div class="row-fluid control-group" ng-class="{error: hasError(form.role)}">
+                      <div class="span2"><label>Role*</label></div>
+                      <div class="span10"><input ng-model="current_user.role" name="role" type="text" class="span12" required></div>
+                    </div>
+
+                    <div class="row-fluid control-group" ng-class="{error: (hasError(form.phone_number) || hasError(form.mobile_number))}">
+                      <div class="span2"><label>Phone*</label></div>
+                      <div class="span4"><input type="text" name="phone_number" ng-model="current_user.phone" required></div>
+                      <div class="span2"><label>Mobile*</label></div>
+                      <div class="span4"><input type="text" name="mobile_number" ng-model="current_user.mobile" required></div>
+                    </div>
+                    <div class="row-fluid control-group" ng-class="{error: hasError(form.mailing_address)}">
+                      <div class="span2"><label>Mailing add*</label></div>
+                      <div class="span10"><textarea rows="3" class="span12" name="mailing_address" ng-model="current_user.mailing_address" required></textarea></div>
+                    </div>
+                    <div class="row-fluid control-group" ng-class="{error: hasError(form.acra_no)}">
+                      <div class="span2"><label>ACRA no.*</label></div>
+                      <div class="span4"><input type="text" name="acra_no" ng-model="current_user.acra_no" required></div>
+                    </div>
+                    <div class="row-fluid control-group">
+                      <div class="controls offset2">
+                        <button type="submit" class="btn btn-warning span3">Update</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

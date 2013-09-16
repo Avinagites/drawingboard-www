@@ -1,0 +1,63 @@
+<form class="form-horizontal" novalidate name="form" ng-submit="submitForm()">
+  <div class="control-group">
+    <label class="control-label" for="inputEvent">Event name*</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.name" name="name" required
+             id="inputEvent" placeholder="e.g. Jamie's 21st Birthday Party" class="span5">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputDate">Date*</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.date" name="date" required
+             datepicker-popup="dd-MMMM-yyyy" show-weeks="false"
+             id="inputDate" placeholder="30 / 1 / 2013">
+    </div>
+  </div>
+  <!--<div class="control-group">
+    <label class="control-label" for="inputGuest">Starting From*</label>
+    <div class="controls">
+      <div ng-model="form_object.starts_at"><timepicker  name="starts_at" required></timepicker></div>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputGuest">Until*</label>
+    <div class="controls">
+      <div ng-model="form_object.ends_at"><timepicker  name="ends_at" required></timepicker></div>
+    </div>
+  </div>-->
+
+  <div class="control-group">
+    <label class="control-label" for="inputGuest">Time</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.starts_at" name="starts_at" required
+             id="inputFrom" placeholder="From" class="span1">
+      -
+      <input type="text" ng-model="form_object.ends_at" name="ends_at" required
+             id="inputUntil" placeholder="Until" class="span1">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputGuest">Number of Guest*</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.number_of_guests" name="number_of_guests" required
+             id="inputGuest" class="span1">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputLocation">Location(s), if known</label>
+    <div class="controls">
+      <textarea ng-model="form_object.location" name="location"
+              rows="3" class="span5"></textarea>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <!--<label class="checkbox">
+        <input type="checkbox"> I have read the Terms and Conditons
+      </label>-->
+      <button type="submit" class="btn btn-primary">Proceed</button>
+    </div>
+  </div>
+</form>

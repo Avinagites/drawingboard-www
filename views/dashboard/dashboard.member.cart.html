@@ -1,0 +1,39 @@
+<div class="main-container">
+  <div id="main-content" class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <sidebar></sidebar>
+          <div class="span9">
+            <div class="content-main">
+              <div>
+                <div class="row-fluid">
+                  <h3>CART</h3>
+                </div>
+                <accordion close-others="true">
+                  <accordion-group ng-repeat="(key, value) in cart">
+                    <accordion-heading>
+                      {{ key }}  <span class="cart-count">({{ lengthOfHash(value) }})</span>
+                    </accordion-heading>
+                    <div class="cart-item-div" ng-repeat="(id, provider_name) in value">{{ provider_name }}
+                      <a ng-click="remove(key, id)" class="a-remove">Remove</a>
+                    </div>
+                  </accordion-group>
+                </accordion>
+              </div>
+
+              <div>
+                These services are for:
+                <select ng-model="selected_event" ng-options="value.id as value.name for value in current_user.upcoming_events"></select>
+              </div>
+
+              <div>
+                <a ng-href="/#/dashboard.member.checkout/{{ selected_event }}" class="btn btn-long btn-danger">Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

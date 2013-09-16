@@ -1,0 +1,71 @@
+<div id="top-bar">
+  <div id="top-nav">
+    <div class="row-fluid">
+      <div  class="pull-left logo-div">
+        <a href="/"><img src="styles/img/logo.png"></a>
+      </div>
+      <div class="top-nav-bar pull-right">
+        <ul class="nav nav-pills pull-left">
+          <li><a href="/#/service_categories">Browse <img class="header-browse-icon" src="styles/img/b-icon.png"></a></li>
+          <li><a href="/#/faq">FAQ</a></li>
+          <li><a href="/#/blog">Blog</a></li>
+          <li class="disabled"><a href="#">&nbsp;</a></li>
+        </ul>
+
+        <span ng-switch on="authenticated">
+          <span ng-switch-when="true">
+            <span ng-switch on="user_type">
+              <span ng-switch-when="member">
+
+                <!-- MEMBER -->
+                <ul class="nav nav-pills pull-left">
+                  <li><a href="/#/dashboard.member.profile">Profile</a></li>
+                  <li><a href="/#/dashboard.member.cart">Cart</a></li>
+                  <li><a href="/#/dashboard.member.events" data-toggle="">My Events</a></li>
+                  <li><a href ng-click="logout()">Logout</a></li>
+                  <li class="disabled"><a href="#"></a></li>
+                </ul>
+                <a href="/#/event.new">
+                  <button class="btn btn-primary pull-right" type="button">New Event</button>
+                </a>
+                <!-- MEMBER -->
+
+              </span>
+              <span ng-switch-when="vendor">
+
+                <!-- VENDOR -->
+                <ul class="nav nav-pills pull-left">
+                  <li><a href="/#/dashboard.vendor.profile">Profile</a></li>
+                  <li><a href="/#/dashboard.vendor.listing" data-toggle="">My Listing</a></li>
+                  <li><a href ng-click="logout()">Logout</a></li>
+                  <li class="disabled"><a href="#">&nbsp;</a></li>
+                </ul>
+                <a href="/#/listing.new">
+                  <button class="btn btn-primary pull-right" type="button">Start Listing</button>
+                </a>
+                <!-- VENDOR -->
+
+              </span>
+            </span>
+          </span>
+
+          <span ng-switch-when="false">
+
+            <!-- GUEST -->
+            <ul class="nav nav-pills pull-left">
+              <li><a href="/#/login" data-toggle="">Login</a></li>
+              <li><a href="/#/register.member" data-toggle="">Signup</a></li>
+              <li class="disabled"><a href="#">&nbsp;</a></li>
+            </ul>
+            <a href="/#/register.vendor">
+              <button class="btn btn-primary pull-right" type="button">Start Listing</button>
+            </a>
+            <!-- GUEST -->
+
+          </span>
+        </span>
+
+      </div>
+    </div>
+  </div>
+</div>

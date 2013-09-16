@@ -1,0 +1,89 @@
+<form class="form-horizontal" name="form" novalidate ng-submit="submitForm()">
+  <div class="text-left">
+    <div class="row-fluid control-group">
+      <div class="span2">
+        <label>First Name*</label>
+      </div>
+      <div class="span4">
+        <input type="text" class="input-medium" ng-model="user.first_name" name="first_name" required>
+      </div>
+      <div class="span2">
+        <label>Last Name*</label>
+      </div>
+      <div class="span4">
+        <input type="text" class="input-medium" ng-model="user.last_name" name="last_name" required>
+      </div>
+    </div>
+
+    <div class="row-fluid control-group">
+      <div class="span2">
+        <label>Email*</label>
+      </div>
+      <div class="span4">
+        <input type="email" class="input-medium" ng-model="user.email" name="email" required>
+      </div>
+      <div class="span2">
+        <label>Confirm Email*</label>
+      </div>
+      <div class="span4">
+        <input type="email" class="input-medium" match="user.email" ng-model="confirm_email" name="email_confirmation" required>
+      </div>
+    </div>
+
+    <div class="row-fluid control-group" ng-show="form.email_confirmation.$error.match">
+      <div class="span12">
+        <span class="msg-error">Email and Confirm Email must match.</span>
+      </div>
+    </div>
+
+    <div class="row-fluid control-group">
+      <div class="span2">
+        <label>Password*</label>
+      </div>
+      <div class="span4">
+        <input type="password" class="input-medium" ng-model="user.password" name="password"
+               required ng-minlength="8"
+               tooltip="Password is 8 letters long" tooltip-trigger="focus" tooltip-placement="right">
+      </div>
+      <div class="span2">
+        <label>Confirm Password*</label>
+      </div>
+      <div class="span4">
+        <input type="password" class="input-medium" name="password_confirmation"
+               ng-model="confirm_password" match="user.password" required>
+      </div>
+    </div>
+
+    <div class="row-fluid control-group" ng-show="form.password_confirmation.$error.match">
+      <div class="span12">
+        <span class="msg-error">Password do not match</span>
+      </div>
+    </div>
+
+    <div class="row-fluid control-group">
+      <div class="span4">
+        <label>How did you hear about us:</label>
+      </div>
+      <div class="span8">
+        <select class="span12">
+          <option>Word of Mouth</option>
+          <option>Social Media</option>
+          <option>Internet Search</option>
+          <option>TV</option>
+          <option>Print</option>
+          <option>Radio</option>
+          <option>Others</option>
+        </select>
+      </div>
+    </div>
+    <hr>
+    <div class="row-fluid control-group">
+      <div class="span12">
+        <p>* By signing up, you agree to our Terms, Privacy and to receive DrawingBoard Events emails and updates.</p>
+      </div>
+      <div class="text-center">
+        <p>Already registered? <a href="/#/login">Login</a></p>
+        <button type="submit" class="btn btn-warning btn-long">Sign Me Up!</button>
+      </div>
+    </div>
+</form>

@@ -1,0 +1,10 @@
+  <div class="modal-body">
+    <p>Please select the services that you want to request from this vendor.</p>
+    <div class="btn-group quotes-tabs" data-toggle="buttons-checkbox" ng-repeat="service in services">
+      <button type="button" class="btn btn-info" ng-model="selected_services[service.name]" btn-checkbox>{{ service.display_name }}</button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-warning"  ng-click="confirm()">Request</button>
+  </div>

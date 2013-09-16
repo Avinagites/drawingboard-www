@@ -1,0 +1,37 @@
+<div class="main-container">
+  <div id="main-content" class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="span3 sidebar">
+            <ul class="nav nav-list">
+              <li class="nav-header">Account</li>
+              <li class="active"><a href>My Listing</a></li>
+              <li><a href="/#/dashboard.vendor.profile">My Profile</a></li>
+            </ul>
+          </div>
+          <div class="span9">
+            <div class="content-main">
+              <h3>My Listing</h3>
+              <table class="events table table-bordered table-condensed">
+                <tr>
+                  <th>Name</th>
+                  <th>Type of services</th>
+                  <th class="">Status</th>
+                  <th class="span3">Details</th>
+                </tr>
+                <tr ng-repeat="provider in current_user.providers">
+                  <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
+                  <td><span>{{ _.pluck(provider.services, "display_name").join(', ') }}</span></td>
+                  <td class="">{{ provider.status }}</td>
+                  <td><a ng-href="/#/listing.edit/{{ provider.id }}">Edit</a></td>
+                </tr>
+              </table>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
