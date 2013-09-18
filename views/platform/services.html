@@ -31,8 +31,8 @@
                       </div>-->
                       <p class="listing-desc-div">{{ provider.browse_description }}</p>
                       <div class="row-fluid">
-                        <div class="span6"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">More Information (1000 reviews)</a></div><div class="span6">
-                        <a ng-href="/#/provider/{{ provider.id }}/{{ service.name }}" class="btn btn-warning">Request Quote</a>
+                        <div class="span6"><a ng-show="provider.reviews.length == 0" ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">More Information ({{ provider.reviews.length }} reviews)</a></div><div class="span6">
+                        <a href ng-click="goToDetailsPage(provider.id)" class="btn btn-warning">Request Quote</a>
                       </div>
                       </div>
                     </div>

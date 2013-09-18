@@ -29,7 +29,7 @@
                   <td>{{ event.date }}</td>
                   <td><span>{{ event.name }}</span></td>
                   <td>Submitted on {{ event.updated_at | date:'MM/dd/yyyy @ h:mma' }}</td>
-                  <td><a ng-href="/#/event.edit/{{ event.id }}">Edit</a></td>
+                  <td><a ng-href="/#/dashboard.member.checkout/{{ event.id }}">Edit</a></td>
                 </tr>
               </table>
               <hr>
@@ -47,7 +47,7 @@
                   <td>{{ event.date }}</td>
                   <td><span>{{ event.name }}</span></td>
                   <td>Submitted on {{ event.updated_at | date:'MM/dd/yyyy @ h:mma' }}</td>
-                  <td><a ng-href="/#/event.edit/{{ event.id }}">Edit</a></td>
+                  <td>This event is over</td>
                 </tr>
               </table>
             </div>

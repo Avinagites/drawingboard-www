@@ -1,0 +1,22 @@
+<form class="form-horizontal" name="form" ng-submit="submitReview()" novalidate>
+  <div class="span12">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="control-group">
+          <label>Title</label>
+          <input ng-model="form_object.title" name="review_title" type="text" required/>
+        </div>
+        <div class="control-group">
+          <label>Rate</label>
+          <custom-rating value="form_object.rating" max="5" readonly="false"></custom-rating>
+        </div>
+        <div class="control-group">
+          <label>Your Review</label>
+          <textarea ng-model="form_object.content" name="review_content" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-long btn-info">Submit</button>
+        <a ng-click="closeForm()" class="btn btn-long btn-danger">Cancel</a>
+      </div>
+    </div>
+  </div>
+</form>
