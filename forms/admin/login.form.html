@@ -1,0 +1,21 @@
+<form class="form-horizontal" name="form" novalidate>
+  <div class="text-center">
+
+    <div class="control-group" ng-class="{error: hasError(form.email)}">
+      <input class="text-center span8" name="email" type="email" ng-model="user.email" placeholder="Email address" required>
+    </div>
+
+    <div class="control-group" ng-class="{error: hasError(form.password)}">
+      <input class="text-center span8" type="password" ng-model="user.password" placeholder="Password"
+             required ng-minlength="8" name="password"
+             tooltip="Password is 8 letters long" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+
+    <div class="row-fluid">
+      <div class="span4 offset2 text-left">
+        <button type="button" ng-click="login()" class="btn btn-info btn-long">Login</button>
+      </div>
+    </div>
+
+  </div>
+</form>

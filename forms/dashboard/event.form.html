@@ -28,21 +28,21 @@
   </div>-->
 
   <div class="control-group">
-    <label class="control-label" for="inputGuest">Time</label>
+    <label class="control-label" for="inputGuest">Time*</label>
     <div class="controls">
       <input type="text" ng-model="form_object.starts_at" name="starts_at" required
-             id="inputFrom" placeholder="From" class="span1">
+             id="inputFrom" placeholder="6pm" class="span1">
       -
       <input type="text" ng-model="form_object.ends_at" name="ends_at" required
-             id="inputUntil" placeholder="Until" class="span1">
+             id="inputUntil" placeholder="8pm" class="span1">
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label" for="inputGuest">Number of Guest*</label>
     <div class="controls">
-      <input type="text" ng-model="form_object.number_of_guests" name="number_of_guests" required
-             id="inputGuest" class="span1">
+      <input type="number" ng-model="form_object.number_of_guests" name="number_of_guests" required
+             id="inputGuest" placeholder="50" class="span1">
     </div>
   </div>
   <div class="control-group">

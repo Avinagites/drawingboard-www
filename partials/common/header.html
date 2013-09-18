@@ -46,6 +46,20 @@
                 <!-- VENDOR -->
 
               </span>
+
+              <span ng-switch-when="admin">
+
+                <!-- ADMIN -->
+                <ul class="nav nav-pills pull-left">
+                  <li><a href="/#/admin.users">Users</a></li>
+                  <li><a href="/#/admin.listing" data-toggle="">Listing</a></li>
+                  <li><a href="/#/admin.events" data-toggle="">Events</a></li>
+                  <li><a href ng-click="logout()">Logout</a></li>
+                  <li class="disabled"><a href="#">&nbsp;</a></li>
+                </ul>
+                <!-- ADMIN -->
+
+              </span>
             </span>
           </span>
 

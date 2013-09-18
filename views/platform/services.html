@@ -18,7 +18,7 @@
               </div>-->
               <br>
               <table class="table">
-                <tr ng-repeat="provider in service.providers">
+                <tr ng-repeat="provider in service.providers | filter:{status:'Approved'}">
                   <td class="row-fluid span12">
                     <div class="span4 thumbnails"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
                       <img src="styles/img/thumbs.png" ng-show="provider.provider_pictures.length == 0">

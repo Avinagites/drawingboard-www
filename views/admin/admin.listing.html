@@ -1,0 +1,41 @@
+<div class="main-container">
+  <div id="main-content" class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="span3 sidebar">
+            <div admin-dashboard-sidebar></div>
+          </div>
+          <div class="span9">
+            <div class="content-main">
+              <h3>Listing</h3>
+              <table class="admin-table table table-bordered table-condensed table-striped table-hover">
+                <tr>
+                  <th>Vendor Name</th>
+                  <th>Type of services</th>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Created At</th>
+                  <th>Actions</th>
+                </tr>
+                <tr ng-repeat="provider in providers">
+                  <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
+                  <td><span>{{ _.pluck(provider.services, "display_name").join(', ') }}</span></td>
+                  <td>{{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</td>
+                  <td class="">{{ provider.status }}</td>
+                  <td>{{ provider.created_at | date:medium }}</td>
+                  <td>
+                    <a ng-show="provider.status != 'Approved'" href ng-click="approve(provider)">Approve</a>
+                    <span  ng-show="provider.status != 'Approved'">|</span>
+                    <a ng-href="mailto:{{ provider.vendor.email }}">Email</a>
+                  </td>
+                </tr>
+              </table>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
