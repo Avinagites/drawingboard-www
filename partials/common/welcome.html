@@ -29,10 +29,11 @@
         </div>
       </div>
     </div>
-    <div ng-if="authenticated && user_type=='member'">
+    <div ng-if="user_type!='vendor'">
       <h3 class="text-center"><span>CREATE YOUR EVENT</span></h3>
       <p class="text-center"><b>Choose vendors and request quotes using our free, easy-to-use drawingboard too</b></p>
-      <form event-form user="current_user" type="new"></form>
+      <form event-form user="current_user" type="new" ng-if="user_type == 'member'"></form>
+      <form event-form type="to_cache" ng-if="!authenticated"></form>
     </div>
   </div>
 </div>

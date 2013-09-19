@@ -65,14 +65,7 @@
         <label>How did you hear about us:</label>
       </div>
       <div class="span8">
-        <select class="span12">
-          <option>Word of Mouth</option>
-          <option>Social Media</option>
-          <option>Internet Search</option>
-          <option>TV</option>
-          <option>Print</option>
-          <option>Radio</option>
-          <option>Others</option>
+        <select class="span12" ng-model="user.reached_by" ng-options="method as method for method in ['Word of Mouth', 'Social Media', 'Internet Search', 'TV', 'Print', 'Radio', 'Others']">
         </select>
       </div>
     </div>

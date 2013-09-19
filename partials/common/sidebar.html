@@ -2,7 +2,7 @@
   <ul class="nav nav-list">
     <li class="nav-header">Welcome</li>
     <li ng-repeat="service in services">
-      <a ng-href="/#/services/{{ service.name }}">{{ service.display_name }}</a>
+      <a href ng-click="goTo(service.name)">{{ service.display_name }}</a>
     </li>
   </ul>
   <!--<button class="btn btn-large btn-primary" type="button">REVIEW & SUBMIT</button>-->
