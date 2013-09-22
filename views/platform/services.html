@@ -43,9 +43,10 @@
                 </tr>
               </table>
 
-              <hr  ng-show="providers.length > 0">
-
-              <div  ng-show="providers.length > 0" class="pull-right" pagination num-pages="total_pages" current-page="query.page" max-size="9"></div>
+              <div ng-if="providers.length > 0">
+                <hr>
+                <div class="pull-right" pagination num-pages="total_pages" current-page="query.page" max-size="9"></div>
+              </div>
 
 <!--              <hr>
 
