@@ -39,8 +39,11 @@
                   </ul>
                 </div>
                 <div class="span4">
-                  <!--<h4>Map</h4>
-                  <img src="styles/img/thumbs.png" class="img-polaroid" width="248" height="171">-->
+                  <h4>Map</h4>
+                  <a target="_blank" ng-href="https://maps.google.com/maps?z=14&q={{ provider.map_lat }},{{ provider.map_lng }}">
+                    <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{ provider.map_lat }},{{ provider.map_lng }}&zoom=13&size=248x171&markers={{ provider.map_lat }},{{ provider.map_lng }}&sensor=false"
+                         class="img-polaroid" width="248" height="171">
+                  </a>
                 </div>
               </div>
               <hr>
