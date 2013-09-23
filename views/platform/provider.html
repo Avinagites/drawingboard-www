@@ -38,7 +38,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="span4">
+                <div class="span4" ng-hide="provider.map_lat == null || provider.map_lat == '' || provider.map_lng == null || provider.map_lng == '' ">
                   <h4>Map</h4>
                   <a target="_blank" ng-href="https://maps.google.com/maps?z=14&q={{ provider.map_lat }},{{ provider.map_lng }}">
                     <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{ provider.map_lat }},{{ provider.map_lng }}&zoom=13&size=248x171&markers={{ provider.map_lat }},{{ provider.map_lng }}&sensor=false"
