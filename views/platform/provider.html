@@ -70,6 +70,15 @@
                     Write a Review
                   </a>
                 </div>
+                <div class="span8">
+                  <div class="pull-right">
+                    <strong>Sort By</strong>&nbsp;&nbsp;&nbsp;
+                    <div class="btn-group">
+                      <button ng-click="reviews_query.order = 'created_at DESC'" class="btn" ng-class="{'btn-info': reviews_query.order == 'created_at DESC'}">Most Recent</button>
+                      <button ng-click="reviews_query.order = 'rating DESC'" class="btn" ng-class="{'btn-info': reviews_query.order == 'rating DESC'}">Rating</button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <hr>
@@ -107,6 +116,14 @@
                   </div>
 -->
                 </div>
+              </div>
+              <div ng-if="reviews.length > 0">
+                <hr>
+                <div class="pull-right" pagination
+                     total-items="all_reviews_count"
+                     page="reviews_query.page"
+                     items-per-page="reviews_query.per_page"
+                     max-size="9"></div>
               </div>
               <br><br>
             </div>

@@ -45,7 +45,11 @@
 
               <div ng-if="providers.length > 0">
                 <hr>
-                <div class="pull-right" pagination num-pages="total_pages" current-page="query.page" max-size="9"></div>
+                <div class="pull-right" pagination
+                     total-items="total_results"
+                     page="query.page"
+                     items-per-page="query.per_page"
+                     max-size="9"></div>
               </div>
 
 <!--              <hr>
