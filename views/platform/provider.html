@@ -83,7 +83,7 @@
 
               <hr>
 
-              <div class="row-fluid" ng-show="reviewFormOpened">
+              <div class="row-fluid" ng-if="user_type == 'member' && reviewFormOpened">
                 <review-form provider="provider" review-form-opened="reviewFormOpened" reviewer="current_user" type="new"></review-form>
               </div>
 

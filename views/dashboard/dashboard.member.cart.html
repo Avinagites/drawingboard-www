@@ -22,14 +22,19 @@
                 </accordion>
               </div>
 
-              <div>
-                These services are for:
-                <select ng-model="selected_event" ng-options="value.id as value.name for value in current_user.upcoming_events"></select>
-              </div>
+              <div ng-if="user_type == 'member'">
+                <div>
+                  These services are for:
+                  <select ng-model="selected_event" ng-options="value.id as value.name for value in current_user.upcoming_events"></select>
+                </div>
 
-              <div>
-                <a ng-href="/#/dashboard.member.checkout/{{ selected_event }}" class="btn btn-long btn-danger">Checkout</a>
+                <div>
+                  <a ng-href="/#/dashboard.member.checkout/{{ selected_event }}" class="btn btn-long btn-danger">Checkout</a>
+                </div>
+
               </div>
+              <a ng-href="/#/register.member.with_event" class="btn btn-long btn-danger">Submit</a>
+
             </div>
           </div>
         </div>

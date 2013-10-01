@@ -64,6 +64,26 @@
     </div>
   </div>
 
+  <div class="row-fluid" control-group>
+    <div class="span12">
+      <div ui-map-marker="locationMarker">
+      </div>
+
+      <style>
+        #map_canvas {
+          height: 400px;
+          width: 100%;
+        }
+      </style>
+
+      <div id="map_canvas" ui-map="locationMap" class="map"
+           ui-event="{'map-click': 'setLocationMarker($event, $params)'}"
+           ui-options="mapOptions">
+      </div>
+    </div>
+  </div>
+
+
 
   <hr>
   <h3>Registration and Contact details</h3>
