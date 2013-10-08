@@ -13,12 +13,12 @@
       </label>
     </div>
   </div>
-  <div class="control-group" ng-class="{error: hasError(form.vendor_address)}">
+<!--  <div class="control-group" ng-class="{error: hasError(form.vendor_address)}">
     <label class="control-label" for="inputAddress">Vendor address</label>
     <div class="controls">
       <textarea ng-model="form_object.address" name="vendor_address" required></textarea>
     </div>
-  </div>
+  </div>-->
   <div class="row-fluid control-group" ng-class="{error: hasError(form.browse_description)}">
     <div class="span12">
       <label>Brief description to appear on browsing page</label>
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <div class="control-group">
+  <div class="control-group" ng-show="form_object.provider_pictures == null || form_object.provider_pictures.length < 4">
     <div class="fileupload-div" data-provides="fileupload">
       <div>
         <span class="btn btn-file">Upload Picture&nbsp;&nbsp;&nbsp;
@@ -44,6 +44,10 @@
         </span>
       </div>
     </div>
+  </div>
+
+  <div class="control-group">
+    <span>You can only upload up to 4 photos</span>
   </div>
 
   <div class="control-group" ng-repeat="photo in form_object.provider_pictures">
@@ -60,7 +64,17 @@
   <div class="row-fluid control-group">
     <div class="span12">
       <label>Map Address*</label>
-      <textarea ng-model="form_object.map_address" rows="3" class="span12" required></textarea>
+      <textarea
+              ui-keypress="{13:'findCoordinate($event)'}"
+              ng-model="form_object.map_address" rows="3" class="span12" required></textarea>
+    </div>
+  </div>
+
+  <div class="row-fluid control-group" ng-if="suggested_address">
+    <div class="span12">
+      <span>Suggested: </span>
+      <span><em>{{ suggested_address }}<em></span>
+      <span ng-click="setAsMapAddress()"><a class="btn btn-mini btn-inverse" href>&nbsp; Set as address</a></span>
     </div>
   </div>
 
