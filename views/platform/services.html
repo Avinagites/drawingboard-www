@@ -35,7 +35,8 @@
                       <p class="listing-desc-div">{{ provider.browse_description }}</p>
                       <div class="row-fluid">
                         <div class="span6"><a ng-show="provider.reviews.length == 0" ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">More Information ({{ provider.reviews.length }} reviews)</a></div><div class="span6">
-                        <a href ng-click="goToDetailsPage(provider.id)" class="btn btn-warning">Request Quote</a>
+                        <a ng-show="requestsInCart[provider.id] == null" href ng-click="requestQuote(provider)" class="btn btn-warning">Request Quote</a>
+                        <span ng-show="requestsInCart[provider.id] != null" class="btn btn-info">Requested</span>
                       </div>
                       </div>
                     </div>

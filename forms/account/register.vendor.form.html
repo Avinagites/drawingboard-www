@@ -8,9 +8,10 @@
   <div class="control-group">
     <label class="control-label" for="inputService">Type of service offered</label>
     <div class="controls">
-      <label class="checkbox" ng-repeat="service in services">
-        <input type="checkbox" ng-model="user.provider.checked_services[service.id]"> {{ service.display_name }}
-      </label>
+      <select ng-model="user.provider.service_id"
+              name="service"
+              required
+              ng-options="service.id as service.display_name for service in services"></select>
     </div>
   </div>
 <!--  <div class="control-group" ng-class="{error: hasError(form.vendor_address)}">
@@ -32,7 +33,7 @@
     </div>
   </div>
 
-  <div class="control-group" ng-show="form_object.provider_pictures == null || form_object.provider_pictures.length < 4">
+  <div class="control-group" ng-show="user.provider.provider_pictures == null || user.provider.provider_pictures.length < 4">
     <div class="fileupload-div" data-provides="fileupload">
       <div>
         <span class="btn btn-file">Upload Picture&nbsp;&nbsp;&nbsp;
@@ -65,8 +66,18 @@
     <div class="span12">
       <label>Map Address*</label>
       <textarea
+              ng-model="user.provider.map_address" rows="3" class="span12" name="map_address"
+              placeholder="Copy your address here"
+              required></textarea>
+    </div>
+  </div>
+
+  <div class="row-fluid control-group">
+    <div class="span12">
+      <input  ng-model="coord_zipcode"
               ui-keypress="{13:'findCoordinate($event)'}"
-              ng-model="user.provider.map_address" rows="3" class="span12" name="map_address" required></textarea>
+              placeholder="Enter your zip code" />
+      <a class="btn btn-info" ng-click="findCoordinate()">find</a>
     </div>
   </div>
 

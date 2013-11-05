@@ -28,8 +28,8 @@
                   <td> {{ user.last_name }}</td>
                   <td> {{ user.email }}</td>
                   <td>{{ user.reached_by }}</td>
-                  <td> {{ user.created_at }}</td>
-                  <td></td>
+                  <td> {{ user.created_at  | date:'MM/dd/yyyy @ h:mma'}}</td>
+                  <td>{{ user.last_login  | date:'MM/dd/yyyy @ h:mma'}}</td>
 
                   <td><a href="#modal-admin-users" role="button" class="" data-toggle="modal"></a></td>
                 </tr>
