@@ -122,6 +122,7 @@ strong {
 	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.3);*/
 	border: 1px solid #eee;
 	background-color: #ffffff;
+	min-height: 400px;
 }
 .sidebar .nav {
 	margin: 20px 0 20px 20px;
