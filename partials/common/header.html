@@ -3,21 +3,21 @@
     <div class="row-fluid">
       <div  class="pull-left logo-div">
         <a ng-if="authenticated" href="/"><img src="styles/img/logo.png"></a>
-        <a ng-if="!authenticated" href="#/home"><img src="styles/img/logo.png"></a>
+        <a ng-if="!authenticated" href="/"><img src="styles/img/logo.png"></a>
       </div>
       <div class="top-nav-bar pull-right">
         <ul class="nav nav-pills pull-left">
           <li class="dropdown"><a href="/#/service_categories">
-          
-          Browse <img class="header-browse-icon" src="styles/img/b-icon.png"></a>
-          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-          	  <li><a tabindex="-1" href="#">Action</a></li>
-          	  <li><a tabindex="-1" href="#">Another action</a></li>
-          	  <li><a tabindex="-1" href="#">Something else here</a></li>
-          	  <li class="divider"></li>
-          	  <li><a tabindex="-1" href="#">Separated link</a></li>
-          	</ul>
-          
+
+            Browse <img class="header-browse-icon" src="styles/img/b-icon.png"></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+              <li><a tabindex="-1" href="#">Action</a></li>
+              <li><a tabindex="-1" href="#">Another action</a></li>
+              <li><a tabindex="-1" href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+
           </li>
           <li><a href="/#/faq">FAQ</a></li>
           <li><a href="/#/blog">Blog</a></li>
@@ -32,7 +32,7 @@
                 <!-- MEMBER -->
                 <ul class="nav nav-pills pull-left">
                   <li><a href="/#/dashboard.member.profile">Profile</a></li>
-                  <li><a href="/#/dashboard.member.cart">Cart</a></li>
+                  <li><a href="/#/dashboard.member.cart">Cart({{cart.numberOfItems}})</a></li>
                   <li><a href="/#/dashboard.member.events" data-toggle="">My Events</a></li>
                   <li><a href ng-click="logout()">Logout</a></li>
                   <li class="disabled"><a href="#">|</a></li>
@@ -67,7 +67,7 @@
                   <li><a href="/#/admin.listing" data-toggle="">Listing</a></li>
                   <li><a href="/#/admin.events" data-toggle="">Events</a></li>
                   <li><a href ng-click="logout()">Logout</a></li>
-                 <li class="disabled"><a href="#">|</a></li>
+                  <li class="disabled"><a href="#">|</a></li>
                 </ul>
                 <!-- ADMIN -->
 

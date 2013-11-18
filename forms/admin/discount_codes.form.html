@@ -1,0 +1,32 @@
+<form class="form-horizontal" novalidate ng-submit="submitForm()" name="form">
+  <div class="control-group" ng-class="{error: hasError(form.code)}">
+    <label class="control-label">Code</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.code" name="code" required>
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.percentage)}">
+    <label class="control-label">Percentage(%)</label>
+    <div class="controls">
+      <input type="number" ng-model="form_object.percentage" name="percentage" required>
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.description)}">
+    <label class="control-label">Description</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.description" name="description" required>
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.expiry_date)}">
+    <label class="control-label">Expiry Date</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.expiry_date" name="expiry_date" required
+             datepicker-popup="dd MMMM yyyy" show-weeks="false"
+             placeholder="30 November 2014">    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

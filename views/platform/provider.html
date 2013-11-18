@@ -13,16 +13,30 @@
               </ul>
               <div class="row-fluid">
                 <div class="span12">
-                  <h2>{{ provider.name }} <button type="submit" ng-click="openQuoteDialog()" class="btn btn-warning pull-right">Request Quote</button></h2>
+                  <h2>{{ provider.name }}
+                    <button ng-show="requestsInCart[provider.id] == null" ng-click="requestQuote()" class="btn btn-warning pull-right">Request Quote</button>
+                    <button ng-show="requestsInCart[provider.id] != null" class="btn btn-info pull-right">Requested</button>
+                  </h2>
                 </div>
               </div>
               <div class="row-fluid">
                 <p class="span6"><custom-rating value="provider.overall_rating" max="5" readOnly="true"></custom-rating></p>
-                <p class="text-right span6"><a href="#listing-reviews">({{ reviews.length }}) Reviews</a></p>
+                <p class="text-right span6"><a href ng-click="goToReviews()">({{ reviews.length }}) Reviews</a></p>
               </div>
               <p>{{ provider.profile_description }}</p>
               <hr>
-              <div class="row-fluid venue-images">
+
+              <div class="row-fluid venue-images" ng-show="provider.priceplan.code == 'basic' || provider_pictures_pairs.length == 0">
+                <div class="span12" ng-hide="provider.map_lat == null || provider.map_lat == '' || provider.map_lng == null || provider.map_lng == '' ">
+                  <h4>Map</h4>
+                  <a target="_blank" ng-href="https://maps.google.com/maps?z=14&q={{ provider.map_lat }},{{ provider.map_lng }}">
+                    <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{ provider.map_lat }},{{ provider.map_lng }}&zoom=13&size=248x171&markers={{ provider.map_lat }},{{ provider.map_lng }}&sensor=false"
+                         class="img-polaroid" width="248" height="171">
+                  </a>
+                </div>
+              </div>
+
+              <div class="row-fluid venue-images" ng-hide="provider.priceplan.code == 'basic' || provider_pictures_pairs.length == 0">
                 <div class="span8">
                   <h4>Images</h4>
                   <ul class="thumbnails" ng-repeat="pair in provider_pictures_pairs">
@@ -46,6 +60,8 @@
                   </a>
                 </div>
               </div>
+
+
               <hr>
               <div class="text-center">
                 <strong>Share this page</strong>&nbsp;&nbsp;&nbsp;
@@ -81,9 +97,26 @@
                 </div>
               </div>
 
+              <div class="row-fluid" ng-if="user_type != 'member' && provider.priceplan.code != 'basic' ">
+                <div class="span4">
+                  <a href ng-click="notify_error('Please login as member in order to submit a review')" class="btn btn-warning">
+                    Write a Review
+                  </a>
+                </div>
+                <div class="span8">
+                  <div class="pull-right">
+                    <strong>Sort By</strong>&nbsp;&nbsp;&nbsp;
+                    <div class="btn-group">
+                      <button ng-click="reviews_query.order = 'created_at DESC'" class="btn" ng-class="{'btn-info': reviews_query.order == 'created_at DESC'}">Most Recent</button>
+                      <button ng-click="reviews_query.order = 'rating DESC'" class="btn" ng-class="{'btn-info': reviews_query.order == 'rating DESC'}">Rating</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <hr>
 
-              <div class="row-fluid" ng-if="user_type == 'member' && reviewFormOpened">
+              <div class="row-fluid" ng-show="user_type == 'member' && reviewFormOpened">
                 <review-form provider="provider" review-form-opened="reviewFormOpened" reviewer="current_user" type="new"></review-form>
               </div>
 

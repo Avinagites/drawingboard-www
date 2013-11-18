@@ -15,7 +15,8 @@
                     <accordion-heading>
                       {{ key }}  <span class="cart-count">({{ lengthOfHash(value) }})</span>
                     </accordion-heading>
-                    <div class="cart-item-div" ng-repeat="(id, provider_name) in value">{{ provider_name }}
+                    <div class="cart-item-div" ng-repeat="(id, provider_name) in value">
+                      <a target="_blank" ng-href="/#/provider/{{ id }}">{{ provider_name }}</a>
                       <a ng-click="remove(key, id)" class="a-remove">Remove</a>
                     </div>
                   </accordion-group>
@@ -23,7 +24,7 @@
               </div>
 
               <div ng-if="user_type == 'member'">
-                <div>
+                <div ng-if="current_user.upcoming_events.length > 0">
                   These services are for:
                   <select ng-model="selected_event" ng-options="value.id as value.name for value in current_user.upcoming_events"></select>
                 </div>
@@ -33,7 +34,9 @@
                 </div>
 
               </div>
-              <a ng-href="/#/register.member.with_event" class="btn btn-long btn-danger">Submit</a>
+              <div ng-if="user_type != 'member'">
+                <a ng-href="/#/register.member.with_event" class="btn btn-long btn-danger">Submit</a>
+              </div>
 
             </div>
           </div>

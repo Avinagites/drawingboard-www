@@ -14,19 +14,29 @@
                   <th>Vendor Name</th>
                   <th>Type of services</th>
                   <th>Name</th>
+                  <th>Price Plan</th>
                   <th>Status</th>
+                  <th>Expiry</th>
+                  <th>Vendor Details</th>
                   <th>Created At</th>
                   <th>Actions</th>
                 </tr>
                 <tr ng-repeat="provider in providers">
                   <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
-                  <td><span>{{ _.pluck(provider.services, "display_name").join(', ') }}</span></td>
+                  <td><span>{{ provider.service.display_name }}</span></td>
                   <td>{{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</td>
-                  <td class="">{{ provider.status }}</td>
+                  <td>{{ provider.priceplan.name }}</td>
+                  <td>{{ provider.status }}</td>
+                  <td>{{ provider.expiry | date:medium }}</td>
+                  <td>
+                  <strong>{{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</strong><br>
+                  <strong>{{ provider.vendor.email }}</strong><br>
+                  ACRA: <strong>{{ provider.vendor.acra_no }}</strong><br>
+                  Mailing Address: <strong>{{ provider.vendor.mailing_address }}</strong></td>
                   <td>{{ provider.created_at | date:medium }}</td>
                   <td>
-                    <a ng-show="provider.status != 'Approved'" href ng-click="approve(provider)">Approve</a>
-                    <span  ng-show="provider.status != 'Approved'">|</span>
+                    <a ng-show="provider.status == 'Pending Approval'" href ng-click="approve(provider)">Approve</a>
+                    <span  ng-show="provider.status == 'Pending Approval'">|</span>
                     <a ng-href="mailto:{{ provider.vendor.email }}">Email</a>
                   </td>
                 </tr>
