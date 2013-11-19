@@ -1,11 +1,52 @@
 <div class="main-container">
 <div id="main-content" class="container">
-  <div class="row">
+  <div class="row-fluid">
     <div class="span12">
-      <div class="row">
         <sidebar></sidebar>
-        <div ng-include src="'partials/common/welcome.html'"></div>
-      </div>
+        <!--<div ng-include src="'partials/common/welcome.html'"></div>-->
+        
+        
+        <div class="span9">
+          <div class="content-main">
+            <h2 class="text-center">WELCOME TO YOUR <span>DRAWING BOARD</span></h2>
+            <div id="howto" class="row-fluid">
+              <div class="span12 text-center">
+                <h3>How to use your Drawing Board?</h3>
+                <div class="row-fluid">
+                  <div class="span3">
+                    <img src="styles/img/home-wine-icon.png"><span><img src="styles/img/arrow.png"></span>
+                    <p><strong>User come to the site</strong></p>
+                    <p>Login to their accounts</p>
+                  </div>
+                  <div class="span3">
+                    <img src="styles/img/how2.png"><span><img src="styles/img/arrow.png"></span>
+                    <p><strong>Browse event suppliers</strong></p>
+                    <p>Add the right suppliers to cart</p>
+                  </div>
+                  <div class="span3">
+                    <img src="styles/img/how3.png"><span><img src="styles/img/arrow.png"></span>
+                    <p><strong>Submit a form</strong></p>
+                    <p>The form then will send the details to all event suppliers</p>
+                  </div>
+                  <div class="span3">
+                    <img src="styles/img/how4.png">
+                    <p><strong>Event suppliers contact the user</strong></p>
+                    <p>Done!</p>
+                  </div>
+                  <div class="span11"><hr ng-if="authenticated && user_type=='member'"></div>
+                </div>
+              </div>
+            </div>
+            <div ng-if="user_type!='vendor'" class="welcome-event-box">
+              <h3 class="text-center"><span>CREATE YOUR EVENT</span></h3>
+              <p class="text-center"><b>Choose vendors and request quotes using our free, easy-to-use drawingboard too</b></p>
+              <form event-form user="current_user" type="new" ng-if="user_type == 'member'"></form>
+              <form event-form type="to_cache" ng-if="!authenticated"></form>
+            </div>
+          </div>
+        </div>
+        
+        
     </div>
   </div>
 </div>

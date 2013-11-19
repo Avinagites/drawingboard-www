@@ -1,9 +1,9 @@
-<form class="form-horizontal" novalidate name="form" ng-submit="submitForm()">
+<form class="form-horizontal homepage-form" novalidate name="form" ng-submit="submitForm()">
   <div class="control-group">
     <label class="control-label" for="inputEvent">Event name*</label>
     <div class="controls">
       <input type="text" ng-model="form_object.name" name="name" required
-             id="inputEvent" placeholder="e.g. Jamie's 21st Birthday Party" class="span5">
+             id="inputEvent" placeholder="e.g. Jamie's 21st Birthday Party" class="span6">
     </div>
   </div>
   <div class="control-group">
@@ -11,7 +11,7 @@
     <div class="controls">
       <input type="text" ng-model="form_object.date" name="date" required
              datepicker-popup="M/d/yyyy" show-weeks="false"
-             id="inputDate" placeholder="MM/DD/YYYY">
+             id="inputDate" placeholder="MM/DD/YYYY" class="span6">
     </div>
   </div>
   <!--<div class="control-group">
@@ -31,10 +31,10 @@
     <label class="control-label" for="inputGuest">Time*</label>
     <div class="controls">
       <input type="text" ng-model="form_object.starts_at" name="starts_at" required
-             id="inputFrom" placeholder="6pm" class="span1">
+             id="inputFrom" placeholder="6pm" class="span2">
       -
       <input type="text" ng-model="form_object.ends_at" name="ends_at" required
-             id="inputUntil" placeholder="8pm" class="span1">
+             id="inputUntil" placeholder="8pm" class="span2">
     </div>
   </div>
 
@@ -49,7 +49,7 @@
     <label class="control-label" for="inputLocation">Location(s), if known</label>
     <div class="controls">
       <textarea ng-model="form_object.location" name="location"
-              rows="3" class="span5"></textarea>
+              rows="3" class="span6"></textarea>
     </div>
   </div>
   <div class="control-group">
