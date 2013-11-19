@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="control-group" ng-show="user.provider.provider_pictures == null || user.provider.provider_pictures.length < 4">
+  <div class="control-group" ng-show="pricingplan != 'basic' && (user.provider.provider_pictures == null || user.provider.provider_pictures.length < 4)">
     <div class="fileupload-div" data-provides="fileupload">
       <div>
         <span class="btn btn-file">Upload Picture&nbsp;&nbsp;&nbsp;
@@ -48,7 +48,8 @@
   </div>
 
   <div class="control-group">
-    <span>You can only upload up to 4 photos</span>
+    <span ng-hide="pricingplan == 'basic'">You can only upload up to 4 photos</span>
+    <span ng-show="pricingplan == 'basic'">You cannot upload picture with a basic plan</span>
   </div>
 
   <div class="control-group" ng-repeat="photo in user.provider.provider_pictures">
