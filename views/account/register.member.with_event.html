@@ -1,11 +1,13 @@
 <div class="main-container">
-  <div id="main-content" class="container">
-    <div class="row">
-      <div class="span12">
-        <div class="row">
-          <sidebar></sidebar>
-          <div class="span9">
-            <div class="content-main">
+  <div class="container">
+    <div class="row-fluid">
+
+
+      <div class="span8 offset2 box_con">
+      
+<!--          <sidebar></sidebar>-->
+          <div class="span12 box_con">
+            <div class="">
               <h2 class="text-center">MY DRAWINGBOARD</h2>
 
               <form class="form-horizontal" novalidate name="form">
@@ -20,7 +22,7 @@
                     <div class="row-fluid control-group">
                       <div>
                         <label>Event Name</label>
-                        <input class="span8" type="text" ng-model="form_object.name" name="name" required placeholder="e.g. Jamie's 21st Birthday Party">
+                        <input class="span12" type="text" ng-model="form_object.name" name="name" required placeholder="e.g. Jamie's 21st Birthday Party">
 
                       </div>
                     </div>
@@ -34,9 +36,9 @@
                     <div class="row-fluid control-group">
                       <label class="" for="">Time</label>
                       <div class="">
-                        <input type="text" id="" ng-model="form_object.starts_at" name="starts_at" required placeholder="From" class="span2">
+                        <input type="text" id="" ng-model="form_object.starts_at" name="starts_at" required placeholder="From 7pm" class="span2">
                         -
-                        <input type="text" id="" ng-model="form_object.ends_at" name="ends_at" required placeholder="Until" class="span2">
+                        <input type="text" id="" ng-model="form_object.ends_at" name="ends_at" required placeholder="To 10pm" class="span2">
                       </div>
                     </div>
                     <div class="control-group">
@@ -48,7 +50,7 @@
                     <div class="control-group">
                       <label class="" for="inputLocation">Location(s), if known</label>
                       <div class="">
-                        <textarea ng-model="form_object.location" name="location" rows="3" class="span8"></textarea>
+                        <textarea ng-model="form_object.location" name="location" rows="3" class="span12"></textarea>
                       </div>
                     </div>
                     <hr>
@@ -192,8 +194,7 @@
                 </div>
               </form>
             </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

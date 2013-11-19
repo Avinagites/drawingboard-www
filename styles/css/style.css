@@ -237,7 +237,7 @@ strong {
 }
 
 .content-main {
-	padding: 20px 5px;
+	padding: 20px 20px 20px 0px;
 }
 .content-main i {
 	color: #b0b0b0;
@@ -637,7 +637,7 @@ sub, sup {
 
 .tinynav { display: none }
 .span3.sidebar {
-    padding: 20px 5px 0;
+    padding: 20px 0px 0;
 }
 .tinynav.tinynav1 {
     width: 100%;
