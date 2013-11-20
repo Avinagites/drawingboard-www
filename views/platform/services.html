@@ -14,7 +14,7 @@
                   <button ng-click="services_sort_by('overall_rating DESC')" class="btn">Rating</button>
                   <button ng-click="services_sort_by('name DESC')" class="btn">Alphabetical</button>
                 </div>
-                <div class="btn-group">
+                <div class="btn-group" ng-show="service.name == 'venues'">
                   <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
                 </div>
               </div>
