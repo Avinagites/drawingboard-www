@@ -14,12 +14,23 @@
               ng-options="service.id as service.display_name for service in services"></select>
     </div>
   </div>
-<!--  <div class="control-group" ng-class="{error: hasError(form.vendor_address)}">
-    <label class="control-label" for="inputAddress">Vendor address</label>
+
+  <div class="control-group">
+    <label class="control-label" for="inputService">Venue Size</label>
     <div class="controls">
-      <textarea ng-model="form_object.address" name="vendor_address" required></textarea>
+      <select ng-model="form_object.venue_size"
+              name="venue_size"
+              required
+              ng-options="venue_size for venue_size in venue_sizes"></select>
     </div>
-  </div>-->
+  </div>
+
+  <!--  <div class="control-group" ng-class="{error: hasError(form.vendor_address)}">
+      <label class="control-label" for="inputAddress">Vendor address</label>
+      <div class="controls">
+        <textarea ng-model="form_object.address" name="vendor_address" required></textarea>
+      </div>
+    </div>-->
   <div class="row-fluid control-group" ng-class="{error: hasError(form.browse_description)}">
     <div class="span12">
       <label>Brief description to appear on browsing page</label>
