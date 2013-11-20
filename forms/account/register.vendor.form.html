@@ -1,41 +1,52 @@
 <form class="form-horizontal" novalidate ng-submit="submitForm()" name="form">
-  <div class="control-group" ng-class="{error: hasError(form.name)}">
-    <label class="control-label" for="inputVendor">Vendor Name</label>
-    <div class="controls">
-      <input type="text" ng-model="user.provider.name" name="name" id="inputVendor" placeholder="Name" required>
-    </div>
+<div class="control-group" ng-class="{error: hasError(form.name)}">
+  <label class="control-label" for="inputVendor">Vendor Name</label>
+  <div class="controls">
+    <input type="text" ng-model="user.provider.name" name="name" id="inputVendor" placeholder="Name" required>
   </div>
-  <div class="control-group">
-    <label class="control-label" for="inputService">Type of service offered</label>
-    <div class="controls">
-      <select ng-model="user.provider.service_id"
-              name="service"
-              required
-              ng-options="service.id as service.display_name for service in services"></select>
-    </div>
+</div>
+<div class="control-group">
+  <label class="control-label" for="inputService">Type of service offered</label>
+  <div class="controls">
+    <select ng-model="user.provider.service_id"
+            name="service"
+            required
+            ng-options="service.id as service.display_name for service in services"></select>
   </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label" for="inputService">Venue Size</label>
+  <div class="controls">
+    <select ng-model="user.provider.venue_size"
+            name="venue_size"
+            required
+            ng-options="venue_size for venue_size in venue_sizes"></select>
+  </div>
+</div>
+
 <!--  <div class="control-group" ng-class="{error: hasError(form.vendor_address)}">
     <label class="control-label" for="inputAddress">Vendor address</label>
     <div class="controls">
       <textarea ng-model="user.provider.address" name="vendor_address" required></textarea>
     </div>
   </div>-->
-  <div class="row-fluid control-group" ng-class="{error: hasError(form.browse_description)}">
-    <div class="span12">
-      <label>Brief description to appear on browsing page</label>
-      <textarea ng-model="user.provider.browse_description" name="browse_description" rows="3" class="span12"></textarea>
-    </div>
+<div class="row-fluid control-group" ng-class="{error: hasError(form.browse_description)}">
+  <div class="span12">
+    <label>Brief description to appear on browsing page</label>
+    <textarea ng-model="user.provider.browse_description" name="browse_description" rows="3" class="span12"></textarea>
   </div>
-  <div class="row-fluid control-group"  ng-class="{error: hasError(form.profile_description)}">
-    <div class="span12">
-      <label>Description to appear on profile page</label>
-      <textarea ng-model="user.provider.profile_description" name="profile_description" rows="3" class="span12"></textarea>
-    </div>
+</div>
+<div class="row-fluid control-group"  ng-class="{error: hasError(form.profile_description)}">
+  <div class="span12">
+    <label>Description to appear on profile page</label>
+    <textarea ng-model="user.provider.profile_description" name="profile_description" rows="3" class="span12"></textarea>
   </div>
+</div>
 
-  <div class="control-group" ng-show="pricingplan != 'basic' && (user.provider.provider_pictures == null || user.provider.provider_pictures.length < 4)">
-    <div class="fileupload-div" data-provides="fileupload">
-      <div>
+<div class="control-group" ng-show="pricingplan != 'basic' && (user.provider.provider_pictures == null || user.provider.provider_pictures.length < 4)">
+  <div class="fileupload-div" data-provides="fileupload">
+    <div>
         <span class="btn btn-file">Upload Picture&nbsp;&nbsp;&nbsp;
           <input type="file" fileupload name="picture"
                  uploader-id="provider_picture"
@@ -43,151 +54,151 @@
                  service-path="pictures" />
           <span ng-bind="provider_picture_state"></span>
         </span>
+    </div>
+  </div>
+</div>
+
+<div class="control-group">
+  <span ng-hide="pricingplan == 'basic'">You can only upload up to 4 photos</span>
+  <span ng-show="pricingplan == 'basic'">You cannot upload picture with a basic plan</span>
+</div>
+
+<div class="control-group" ng-repeat="photo in user.provider.provider_pictures">
+  <div class="fileupload-div" ng-hide="photo._destroy">
+    <div>
+      <img ng-src = "{{ photo.url }}" style="max-width: 150px;">
+      <a href ng-click="removeAssoc(user.provider.provider_pictures, $index)" class="btn fileupload-exists">Remove</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row-fluid control-group" ng-class="{error: hasError(form.map_address)}">
+  <div class="span12">
+    <label>Map Address*</label>
+    <textarea
+            ng-model="user.provider.map_address" rows="3" class="span12" name="map_address"
+            placeholder="Copy your address here"
+            required></textarea>
+  </div>
+</div>
+
+<div class="row-fluid control-group">
+  <div class="span12">
+    <input  ng-model="coord_zipcode"
+            ui-keypress="{13:'findCoordinate($event)'}"
+            placeholder="Enter your zip code" />
+    <a class="btn btn-info" ng-click="findCoordinate()">find</a>
+  </div>
+</div>
+
+<div class="row-fluid control-group" ng-if="suggested_address">
+  <div class="span12">
+    <span>Suggested: </span>
+    <span><em>{{ suggested_address }}<em></span>
+    <span ng-click="setAsMapAddress()"><a class="btn btn-mini btn-inverse" href>&nbsp; Set as address</a></span>
+  </div>
+</div>
+
+<div class="row-fluid" control-group>
+  <div class="span12">
+    <div ui-map-marker="locationMarker">
+    </div>
+
+    <style>
+      #map_canvas {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+
+    <div id="map_canvas" ui-map="locationMap" class="map"
+         ui-event="{'map-click': 'setLocationMarker($event, $params)'}"
+         ui-options="mapOptions">
+    </div>
+  </div>
+</div>
+
+
+
+<hr>
+<h3>Registration and Contact details</h3>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="row-fluid control-group" ng-class="{error: (hasError(form.first_name) || hasError(form.last_name))}">
+      <div class="span2"><label>First Name*</label></div>
+      <div class="span4"><input ng-model="user.vendor.first_name" type="text" name="first_name" required></div>
+      <div class="span2"><label>Last Name*</label></div>
+      <div class="span4"><input ng-model="user.vendor.last_name" type="text" name="last_name" required></div>
+    </div>
+
+    <div class="row-fluid control-group" ng-class="{error: hasError(form.role)}">
+      <div class="span2"><label>Role*</label></div>
+      <div class="span10"><input ng-model="user.vendor.role" name="role" type="text" class="span12" required></div>
+    </div>
+
+    <div class="row-fluid control-group" ng-class="{error: hasError(form.email)}">
+      <div class="span2"><label>Email*</label></div>
+      <div class="span4"><input ng-model="user.vendor.email" name="email" type="email" required></div>
+      <div class="span2"><label>Confirm Email*</label></div>
+      <div class="span4"><input match="user.vendor.email" ng-model="confirm_email" name="email_confirmation" type="email" required></div>
+    </div>
+    <div class="row-fluid control-group" ng-show="form.email_confirmation.$error.match">
+      <div class="span12">
+        <span class="msg-error">Email and Confirm Email must match.</span>
+      </div>
+    </div>
+    <div class="row-fluid control-group" ng-class="{error: hasError(form.password)}">
+      <div class="span2"><label>Password*</label></div>
+      <div class="span4">
+        <input class="" type="password"
+               ng-model="user.vendor.password" name="password" required ng-minlength="8"
+               tooltip="Password is 8 letters long" tooltip-trigger="focus" tooltip-placement="right">
+      </div>
+      <div class="span2"><label>Confirm Password*</label></div>
+      <div class="span4">
+        <input class="" type="password" name="password_confirmation"
+               ng-model="confirm_password" match="user.vendor.password" required>
+      </div>
+    </div>
+
+    <div class="row-fluid control-group" ng-show="form.password_confirmation.$error.match">
+      <div class="span12">
+        <span class="msg-error">Password do not match</span>
+      </div>
+    </div>
+
+    <div class="row-fluid control-group" ng-class="{error: (hasError(form.phone_number) || hasError(form.mobile_number))}">
+      <div class="span2"><label>Phone*</label></div>
+      <div class="span4"><input type="text" name="phone_number" ng-model="user.vendor.phone" required></div>
+      <div class="span2"><label>Mobile*</label></div>
+      <div class="span4"><input type="text" name="mobile_number" ng-model="user.vendor.mobile" required></div>
+    </div>
+    <div class="row-fluid control-group" ng-class="{error: hasError(form.mailing_address)}">
+      <div class="span2"><label>Mailing add*</label></div>
+      <div class="span10"><textarea rows="3" class="span12" name="mailing_address" ng-model="user.vendor.mailing_address" required></textarea></div>
+    </div>
+    <div class="row-fluid control-group" ng-class="{error: hasError(form.acra_no)}">
+      <div class="span2"><label>ACRA no.*</label></div>
+      <div class="span4"><input type="text" name="acra_no" ng-model="user.vendor.acra_no" required></div>
+    </div>
+    <div class="row-fluid control-group">
+      <div class="span12">
+        <label>Questions/Comments</label>
+        <textarea rows="3" ng-model="user.vendor.questions" class="span12"></textarea>
       </div>
     </div>
   </div>
+</div>
+<div class="control-group" ng-class="{error: hasError(form.terms_and_conditions)}">
+  <div class="controls">
 
-  <div class="control-group">
-    <span ng-hide="pricingplan == 'basic'">You can only upload up to 4 photos</span>
-    <span ng-show="pricingplan == 'basic'">You cannot upload picture with a basic plan</span>
+    <label class="checkbox" ng-class="{error: hasError(form.terms_and_conditions)}">
+      <input type="checkbox" required ng-model="terms_and_conditions" name="terms_and_conditions"> I have read the Terms and Conditons
+    </label>
+    <button type="submit" class="btn btn-warning span2">Submit</button>
+
   </div>
-
-  <div class="control-group" ng-repeat="photo in user.provider.provider_pictures">
-    <div class="fileupload-div" ng-hide="photo._destroy">
-      <div>
-        <img ng-src = "{{ photo.url }}" style="max-width: 150px;">
-        <a href ng-click="removeAssoc(user.provider.provider_pictures, $index)" class="btn fileupload-exists">Remove</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="row-fluid control-group" ng-class="{error: hasError(form.map_address)}">
-    <div class="span12">
-      <label>Map Address*</label>
-      <textarea
-              ng-model="user.provider.map_address" rows="3" class="span12" name="map_address"
-              placeholder="Copy your address here"
-              required></textarea>
-    </div>
-  </div>
-
-  <div class="row-fluid control-group">
-    <div class="span12">
-      <input  ng-model="coord_zipcode"
-              ui-keypress="{13:'findCoordinate($event)'}"
-              placeholder="Enter your zip code" />
-      <a class="btn btn-info" ng-click="findCoordinate()">find</a>
-    </div>
-  </div>
-
-  <div class="row-fluid control-group" ng-if="suggested_address">
-    <div class="span12">
-      <span>Suggested: </span>
-      <span><em>{{ suggested_address }}<em></span>
-      <span ng-click="setAsMapAddress()"><a class="btn btn-mini btn-inverse" href>&nbsp; Set as address</a></span>
-    </div>
-  </div>
-
-  <div class="row-fluid" control-group>
-    <div class="span12">
-      <div ui-map-marker="locationMarker">
-      </div>
-
-      <style>
-        #map_canvas {
-          height: 400px;
-          width: 100%;
-        }
-      </style>
-
-      <div id="map_canvas" ui-map="locationMap" class="map"
-           ui-event="{'map-click': 'setLocationMarker($event, $params)'}"
-           ui-options="mapOptions">
-      </div>
-    </div>
-  </div>
-
-
-
-  <hr>
-  <h3>Registration and Contact details</h3>
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="row-fluid control-group" ng-class="{error: (hasError(form.first_name) || hasError(form.last_name))}">
-        <div class="span2"><label>First Name*</label></div>
-        <div class="span4"><input ng-model="user.vendor.first_name" type="text" name="first_name" required></div>
-        <div class="span2"><label>Last Name*</label></div>
-        <div class="span4"><input ng-model="user.vendor.last_name" type="text" name="last_name" required></div>
-      </div>
-
-      <div class="row-fluid control-group" ng-class="{error: hasError(form.role)}">
-        <div class="span2"><label>Role*</label></div>
-        <div class="span10"><input ng-model="user.vendor.role" name="role" type="text" class="span12" required></div>
-      </div>
-
-      <div class="row-fluid control-group" ng-class="{error: hasError(form.email)}">
-        <div class="span2"><label>Email*</label></div>
-        <div class="span4"><input ng-model="user.vendor.email" name="email" type="email" required></div>
-        <div class="span2"><label>Confirm Email*</label></div>
-        <div class="span4"><input match="user.vendor.email" ng-model="confirm_email" name="email_confirmation" type="email" required></div>
-      </div>
-      <div class="row-fluid control-group" ng-show="form.email_confirmation.$error.match">
-        <div class="span12">
-          <span class="msg-error">Email and Confirm Email must match.</span>
-        </div>
-      </div>
-      <div class="row-fluid control-group" ng-class="{error: hasError(form.password)}">
-        <div class="span2"><label>Password*</label></div>
-        <div class="span4">
-          <input class="" type="password"
-                 ng-model="user.vendor.password" name="password" required ng-minlength="8"
-                 tooltip="Password is 8 letters long" tooltip-trigger="focus" tooltip-placement="right">
-        </div>
-        <div class="span2"><label>Confirm Password*</label></div>
-        <div class="span4">
-          <input class="" type="password" name="password_confirmation"
-                 ng-model="confirm_password" match="user.vendor.password" required>
-        </div>
-      </div>
-
-      <div class="row-fluid control-group" ng-show="form.password_confirmation.$error.match">
-        <div class="span12">
-          <span class="msg-error">Password do not match</span>
-        </div>
-      </div>
-
-      <div class="row-fluid control-group" ng-class="{error: (hasError(form.phone_number) || hasError(form.mobile_number))}">
-        <div class="span2"><label>Phone*</label></div>
-        <div class="span4"><input type="text" name="phone_number" ng-model="user.vendor.phone" required></div>
-        <div class="span2"><label>Mobile*</label></div>
-        <div class="span4"><input type="text" name="mobile_number" ng-model="user.vendor.mobile" required></div>
-      </div>
-      <div class="row-fluid control-group" ng-class="{error: hasError(form.mailing_address)}">
-        <div class="span2"><label>Mailing add*</label></div>
-        <div class="span10"><textarea rows="3" class="span12" name="mailing_address" ng-model="user.vendor.mailing_address" required></textarea></div>
-      </div>
-      <div class="row-fluid control-group" ng-class="{error: hasError(form.acra_no)}">
-        <div class="span2"><label>ACRA no.*</label></div>
-        <div class="span4"><input type="text" name="acra_no" ng-model="user.vendor.acra_no" required></div>
-      </div>
-      <div class="row-fluid control-group">
-        <div class="span12">
-          <label>Questions/Comments</label>
-          <textarea rows="3" ng-model="user.vendor.questions" class="span12"></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="control-group" ng-class="{error: hasError(form.terms_and_conditions)}">
-    <div class="controls">
-
-      <label class="checkbox" ng-class="{error: hasError(form.terms_and_conditions)}">
-        <input type="checkbox" required ng-model="terms_and_conditions" name="terms_and_conditions"> I have read the Terms and Conditons
-      </label>
-      <button type="submit" class="btn btn-warning span2">Submit</button>
-
-    </div>
-  </div>
+</div>
 </form>
