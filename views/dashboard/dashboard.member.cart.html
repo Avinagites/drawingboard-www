@@ -8,6 +8,11 @@
                 <div class="row-fluid">
                   <h3>CART</h3>
                 </div>
+
+                <pre>{{ cartIsEmpty }} </pre>
+
+                <p ng-show="cartIsEmpty">You have not requested for any quotes. Start by clicking <a href="/#/services/venues">here</a> to select your vendors. </p>
+
                 <accordion close-others="true">
                   <accordion-group ng-repeat="(key, value) in cart">
                     <accordion-heading>
@@ -21,7 +26,7 @@
                 </accordion>
               </div>
 
-              <div ng-if="user_type == 'member'">
+              <div ng-if="user_type == 'member' && !cartIsEmpty">
                 <div ng-if="current_user.upcoming_events.length > 0">
                   These services are for:
                   <select ng-model="selected_event" ng-options="value.id as value.name for value in current_user.upcoming_events"></select>
@@ -32,7 +37,7 @@
                 </div>
 
               </div>
-              <div ng-if="user_type != 'member'">
+              <div ng-if="user_type != 'member' && !cartIsEmpty">
                 <a ng-href="/#/register.member.with_event" class="btn btn-long btn-danger">Submit</a>
               </div>
 
