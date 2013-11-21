@@ -30,7 +30,7 @@
                   <h4>Map</h4>
                   <a target="_blank" ng-href="https://maps.google.com/maps?z=14&q={{ provider.map_lat }},{{ provider.map_lng }}">
                     <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{ provider.map_lat }},{{ provider.map_lng }}&zoom=13&size=248x171&markers={{ provider.map_lat }},{{ provider.map_lng }}&sensor=false"
-                         class="img-polaroid" width="248" height="171">
+                         class="img-polaroid"  width="248" height="171">
                   </a>
                 </div>
               </div>
@@ -41,12 +41,12 @@
                   <ul class="thumbnails" ng-repeat="pair in provider_pictures_pairs">
                     <li class="span6">
                       <a ng-click="openPictureDialog(pair[0].avatar_url)" href class="thumbnail">
-                        <img ng-src="{{ pair[0].avatar_url }}">
+                        <img nailthumb method="crop" width="200" height="125" ng-src="{{ pair[0].avatar_url }}">
                       </a>
                     </li>
                     <li class="span6" ng-show="pair[1].avatar_url">
-                      <a ng-click="openPictureDialog(pair[1].avatar_url)" href class="thumbnail">
-                        <img ng-src="{{ pair[1].avatar_url }}">
+                      <a ng-click="openPictureDialog(pair[1].avatar_url)"  href class="thumbnail">
+                        <img  nailthumb method="crop" width="200" height="125" ng-src="{{ pair[1].avatar_url }}">
                       </a>
                     </li>
                   </ul>

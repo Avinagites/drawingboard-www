@@ -31,6 +31,14 @@ text-shadow: none;
 	color: #fff;
 	text-shadow: none;
 }
+.background_orange_1 {
+	background-color: #FB893F!important;
+	color: white!important;
+}
+.background_orange_1 i{
+	color: white!important;	
+}
+
 .text-grey {
 	color: #999999;
 }
@@ -131,7 +139,7 @@ text-shadow: none;
 p {
 	font-size: 13px;
 	color: #666;
-	line-height: 18px;
+	line-height: 19px;
 }
 span {
 	color: #f66201;
@@ -198,7 +206,7 @@ strong {
 	background-color: #ffffff;
 }
 .sidebar .nav {
-	margin: 10px 20px;
+	margin: 0px 20px 10px;
 	border-right: 2px solid #e1e1e1;
 }
 .sidebar .nav-header {
@@ -255,6 +263,10 @@ strong {
 .venue-images .thumbnails > li {
 	margin-bottom: 0px;
 }
+.venue-images .nailthumb-container img{
+	max-width: none;
+}
+
 .content-main .venue-images .span8 {
 	margin-bottom: 10px;
 }
@@ -568,7 +580,7 @@ form label {
 
 .pricing-table-div .row-fluid .span3 {
 	margin-left: -1px;
-	width: 17%;
+	width: 22%;
 }
 .pricing-table .note{
 	color: #888;
