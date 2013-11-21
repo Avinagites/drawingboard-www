@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div class="control-group" ng-if="user.provider.service.name == 'venues'">
+<div class="control-group" ng-show="user.provider.service.name == 'venues'">
   <label class="control-label" for="inputService">Venue Size</label>
   <div class="controls">
     <select ng-model="user.provider.venue_size"

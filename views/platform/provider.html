@@ -14,7 +14,7 @@
                 <div class="span12">
                   <h2>{{ provider.name }}
                     <button ng-show="requestsInCart[provider.id] == null" ng-click="requestQuote()" class="btn btn-warning pull-right">Request Quote</button>
-                    <button ng-show="requestsInCart[provider.id] != null" class="btn btn-info pull-right">Requested</button>
+                    <button ng-show="requestsInCart[provider.id] != null" ng-click="unRequestQuote()" class="btn btn-info pull-right">Requested</button>
                   </h2>
                 </div>
               </div>
