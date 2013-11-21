@@ -24,7 +24,7 @@
                     </div>
 
 
-                    <div class="row-fluid control-group" ng-class="{error: (hasError(form.phone_number) || hasError(form.mobile_number))}">
+                    <div class="row-fluid control-group" ng-class="{error: hasError(form.mobile_number)}">
                       <div class="span2"><label>Email *</label></div>
                       <div class="span4"><input type="text" name="email" ng-model="current_user.email" disabled=""></div>
                       
