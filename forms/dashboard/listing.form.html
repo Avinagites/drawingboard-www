@@ -8,19 +8,19 @@
   <div class="control-group">
     <label class="control-label" for="inputService">Type of service offered</label>
     <div class="controls">
-      <select ng-model="form_object.service"
+      <select ng-model="form_object.service_id"
               name="service"
               required
-              ng-options="service as service.display_name for service in services"></select>
+              ng-options="service.id as service.display_name for service in services"></select>
     </div>
   </div>
 
-  <div class="control-group" ng-show="form_object.service.name == 'venues'">
+  <div class="control-group" ng-show="selected_service.name == 'venues'">
     <label class="control-label" for="inputService">Venue Size</label>
     <div class="controls">
       <select ng-model="form_object.venue_size"
               name="venue_size"
-              required
+              ng-required="selected_service.name == 'venues'"
               ng-options="venue_size for venue_size in venue_sizes"></select>
     </div>
   </div>

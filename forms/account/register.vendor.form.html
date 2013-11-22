@@ -20,7 +20,7 @@
   <div class="controls">
     <select ng-model="user.provider.venue_size"
             name="venue_size"
-            required
+            ng-required="user.provider.service.name == 'venues'"
             ng-options="venue_size for venue_size in venue_sizes"></select>
   </div>
 </div>
