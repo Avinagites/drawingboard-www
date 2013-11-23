@@ -41,12 +41,12 @@
                   <ul class="thumbnails" ng-repeat="pair in provider_pictures_pairs">
                     <li class="span6">
                       <a ng-click="openPictureDialog(pair[0].avatar_url)" href class="thumbnail">
-                        <img nailthumb method="crop" width="200" height="125" ng-src="{{ pair[0].avatar_url }}">
+                        <img nailthumb method="crop" width="206" height="152" ng-src="{{ pair[0].avatar_url }}">
                       </a>
                     </li>
                     <li class="span6" ng-show="pair[1].avatar_url">
                       <a ng-click="openPictureDialog(pair[1].avatar_url)"  href class="thumbnail">
-                        <img  nailthumb method="crop" width="200" height="125" ng-src="{{ pair[1].avatar_url }}">
+                        <img  nailthumb method="crop" width="206" height="152" ng-src="{{ pair[1].avatar_url }}">
                       </a>
                     </li>
                   </ul>

@@ -1,118 +1,86 @@
 
-
-
-
 <div id="top-bar">
   <div id="top-nav">
     <div class="row-fluid">
-      <div  class="pull-left logo-div span4">
-        <a ng-if="authenticated" href="/"><img src="styles/img/logo.png"></a>
-        <a ng-if="!authenticated" href="/"><img src="styles/img/logo.png"></a>
-      </div>
-      
-
+      <div  class="pull-left logo-div span4"> <a ng-if="authenticated" href="/"><img src="styles/img/logo.png"></a> <a ng-if="!authenticated" href="/"><img src="styles/img/logo.png"></a> </div>
       <div class="top-nav-bar span8">
-      
-            <div class="header-nav-1">
+        <div class="header-nav-1">
+          <div ng-switch on="authenticated"  class=""> <span ng-switch-when="true"> <span ng-switch on="user_type"> <span ng-switch-when="member"> 
             
-
-        <div ng-switch on="authenticated"  class="">
-          <span ng-switch-when="true">
-            <span ng-switch on="user_type">
-              <span ng-switch-when="member">
-
-                <!-- MEMBER -->
-                <ul class="nav nav-pills">
-                
-                <li><a href="/#/home">Home</a></li>                       
-                <li><a href="/#/faq">FAQ</a></li>
-                <li><a href="/#/blog">Blog</a></li>
-                <li class="disabled"><a href="#">|</a></li>
-                
-                  <li><a href="/#/dashboard.member.profile">Profile</a></li>
-                  <li><a href="/#/dashboard.member.cart">Cart({{cart.numberOfItems}})</a></li>
-                  <li><a href="/#/dashboard.member.events" data-toggle="">My Events</a></li>
-                  <li><a href ng-click="logout()">Logout</a></li>
-                  <li><a href="/#/event.new">
-                    <button class="btn btn-primary" type="button">New Event</button>
-                  </a></li>
-                </ul>
-
-                <!-- MEMBER -->
-
-              </span>
-              <span ng-switch-when="vendor">
-
-                <!-- VENDOR -->
-                <ul class="nav nav-pills">
-                
-                <li><a href="/#/home">Home</a></li>                       
-                <li><a href="/#/faq">FAQ</a></li>
-                <li><a href="/#/blog">Blog</a></li>
-                <li class="disabled"><a href="#">|</a></li>
-                
-                  <li><a href="/#/dashboard.vendor.profile">Profile</a></li>
-                  <li><a href="/#/dashboard.vendor.listing" data-toggle="">My Listing</a></li>
-                  <li><a href ng-click="logout()">Logout</a></li>
-                  <li>
-                  <a href="/#/listing.new">
-                    <button class="btn btn-primary" type="button">Start Listing</button>
-                  </a>
-                  </li> 
-                </ul>
-                
-                <!-- VENDOR -->
-
-              </span>
-
-              <span ng-switch-when="admin">
-
-                <!-- ADMIN -->
-                <ul class="nav nav-pills pull-left">
-                <li><a href="/#/home">Home</a></li>                       
-                <li><a href="/#/faq">FAQ</a></li>
-                <li><a href="/#/blog">Blog</a></li>
-                <li class="disabled"><a href="#">|</a></li>
-                
-                
-                  <li><a href="/#/admin.users">Users</a></li>
-                  <li><a href="/#/admin.listing" data-toggle="">Listing</a></li>
-                  <li><a href="/#/admin.events" data-toggle="">Events</a></li>
-                  <li><a href ng-click="logout()">Logout</a></li>
-                
-                </ul>
-                <!-- ADMIN -->
-
-              </span>
-            </span>
-          </span>
-
-          <span ng-switch-when="false">
-
+            <!-- MEMBER -->
+            <ul class="nav nav-pills">
+              <li><a href="/#/home">Home</a></li>
+              <li><a href="/#/faq">FAQ</a></li>
+              <li><a href="/#/blog">Blog</a></li>
+              <li class="disabled"><a href="#">|</a></li>
+              <li><a href="/#/dashboard.member.profile">Profile</a></li>
+              <li><a href="/#/dashboard.member.cart">Cart({{cart.numberOfItems}})</a></li>
+              <li><a href="/#/dashboard.member.events" data-toggle="">My Events</a></li>
+              <li><a href ng-click="logout()">Logout</a></li>
+              <li><a href="/#/event.new">
+                <button class="btn btn-primary" type="button">New Event</button>
+                </a></li>
+            </ul>
+            
+            <!-- MEMBER --> 
+            
+            </span> <span ng-switch-when="vendor"> 
+            
+            <!-- VENDOR -->
+            <ul class="nav nav-pills">
+              <li><a href="/#/home">Home</a></li>
+              <li><a href="/#/faq">FAQ</a></li>
+              <li><a href="/#/blog">Blog</a></li>
+              <li class="disabled"><a href="#">|</a></li>
+              <li><a href="/#/dashboard.vendor.profile">Profile</a></li>
+              <li><a href="/#/dashboard.vendor.listing" data-toggle="">My Listing</a></li>
+              <li><a href ng-click="logout()">Logout</a></li>
+              <li> <a href="/#/listing.new">
+                <button class="btn btn-primary" type="button">Start Listing</button>
+                </a> </li>
+            </ul>
+            
+            <!-- VENDOR --> 
+            
+            </span> 
+            
+            <span ng-switch-when="admin"> 
+            
+            <!-- ADMIN -->
+            <ul class="nav nav-pills pull-left">
+              <li><a href="/#/home">Home</a></li>
+              <li><a href="/#/faq">FAQ</a></li>
+              <li><a href="/#/blog">Blog</a></li>
+              <li class="disabled"><a href="#">|</a></li>
+              <li><a href="/#/admin.users">Users</a></li>
+              <li><a href="/#/admin.listing" data-toggle="">Listing</a></li>
+              <li><a href="/#/admin.events" data-toggle="">Events</a></li>
+              <li><a href="/#/admin.discount_codes" data-toggle="">Discount</a></li>
+              <li><a href ng-click="logout()">Logout</a></li>
+            </ul>
+            <!-- ADMIN --> 
+            
+            
+            
+            </span> </span> </span> <span ng-switch-when="false"> 
+            
             <!-- GUEST -->
             <ul class="nav nav-pills">
-            
-            <li><a href="/#/home">Home</a></li>                       
-            <li><a href="/#/faq">FAQ</a></li>
-            <li><a href="/#/blog">Blog</a></li>
-            <li class="disabled"><a href="#">|</a></li>
-            
+              <li><a href="/#/home">Home</a></li>
+              <li><a href="/#/faq">FAQ</a></li>
+              <li><a href="/#/blog">Blog</a></li>
+              <li class="disabled"><a href="#">|</a></li>
               <li><a href="/#/dashboard.member.cart">Cart</a></li>
               <li><a href="/#/login" data-toggle="">Login</a></li>
               <li><a href="/#/register.member" data-toggle="">Signup</a></li>
-              <li>
-            	<a href="/#/register.vendor">
-            	  <button class="btn btn-primary" type="button">Start Listing</button>
-            	</a>  
-              </li>	
+              <li> <a href="/#/register.vendor">
+                <button class="btn btn-primary" type="button">Start Listing</button>
+                </a> </li>
             </ul>
             
-            <!-- GUEST -->
-        </div>
-          </span>
-
-
-      </div>
+            <!-- GUEST --> 
+          </div>
+          </span> </div>
       </div>
     </div>
   </div>
