@@ -44,6 +44,12 @@
   </div>
 </div>
 
+
+<hr>
+
+
+<h4>Upload Pictures</h4>
+
 <div class="control-group" ng-show="pricingplan != 'basic' && (user.provider.provider_pictures == null || user.provider.provider_pictures.length < 4)">
   <div class="fileupload-div" data-provides="fileupload">
     <div>
@@ -57,10 +63,7 @@
     </div>
   </div>
 </div>
-<hr>
 
-
-<h4>Upload Pictures</h4>
 <div class="control-group">
   <span ng-hide="pricingplan == 'basic'">You can only upload up to 4 photos</span>
   <span ng-show="pricingplan == 'basic'">You are unable to upload picture with a basic plan. <a href="">Upgrade to premium!</a></span>
