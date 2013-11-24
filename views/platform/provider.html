@@ -12,7 +12,7 @@
               </ul>
               <div class="row-fluid">
                 <div class="span12">
-                  <h2 class="provider-title">{{ provider.name }} <i class="fa fa-users"></i><span class="service_venue_size">{{ provider.venue_size }}</span>
+                  <h2 class="provider-title">{{ provider.name }} <i ng-show="service.name == 'venues'" class="fa fa-users"></i><span class="service_venue_size">{{ provider.venue_size }}</span>
                   
                     <button ng-show="requestsInCart[provider.id] == null" ng-click="requestQuote()" class="btn btn-warning pull-right">Request Quote</button>
                     <button ng-show="requestsInCart[provider.id] != null" ng-click="unRequestQuote()" class="btn btn-info pull-right">Requested</button>

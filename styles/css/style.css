@@ -499,6 +499,28 @@ form label {
 	line-height: 0px;
 }
 
+.category-nav-div-top {
+	margin-bottom: 10px;
+	position: fixed;
+	width: 100%;
+	padding: 0px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	top: 280px;
+	z-index: 9100;
+}
+.category-nav-div-top a{
+	color: #fff;
+	background-color: #ccc;
+	padding: 10px;
+}
+
+.category-nav-div-top a:hover{
+	text-decoration: none;
+	background-color: #aaa;
+}
+
 /* pricing-table
 ---------------------------------------------------------------------- */
 .pricing-table-div {
@@ -769,6 +791,9 @@ sub, sup {
 	display: none;
 }
 @media(max-width: 980px){
+	.category-nav-div-top{
+		display: none;
+	}
 	#footer *{
 		float: none !important;
 	}
