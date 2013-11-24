@@ -1,21 +1,20 @@
 <div class="span3 sidebar">
-
-
-  <ul class="nav nav-list l_tinynav1" id="sidebar-nav">
-    <li class="nav-header">Help?</li>
+<ul class="nav nav-list l_tinynav1" id="sidebar-nav">
+    <li class="nav-header">
+     <a href="" ng-click="open()">How to get started?</a>
+    
+    
+    </li>
     <li ng-repeat="service in services">
       <a href ng-click="goTo(service.name)">{{ service.display_name }}</a>
     </li>
   </ul>
   <!--<button class="btn btn-large btn-primary" type="button">REVIEW & SUBMIT</button>-->
   
-<h3>Help?</h3>  
+<h3>How to get started?</h3>  
   <select id="tinynav1" class="tinynav tinynav1">
   		<option ng-repeat="service in services" ng-click="goTo(service.name)">{{ service.display_name }}
   		</li>
 	  </option>	
   </select>
-  
-  
-  
 </div>
