@@ -299,6 +299,8 @@ form label {
 	color: #5d5d5d;
 
 }
+
+
 .content-main .events th, .content-main .events td {
 	text-align: center;
 }
@@ -447,6 +449,54 @@ form label {
 
 .service_table_list.table img{
 	max-width: none;
+}
+
+.listing-div .pagination {
+	margin: 0px;
+}
+
+.listing-div .title .fa-users {
+	margin-left: 20px;
+	margin-right: 5px;
+	font-size: 12px;
+	position: relative;
+	top: -2px;
+}
+.listing-div .title .service_venue_size{
+	font-size: 13px;
+	color: #666;
+	position: relative;
+	top: -2px;
+}
+
+.icon-star{
+	color: #fcd20b!important;	
+}
+
+.service-provider-empty-image{
+	height: 150px;
+	background-color: #eee;
+}
+
+.provider-title .fa-users {
+	margin-left: 20px;
+	margin-right: 5px;
+	font-size: 16px;
+	position: relative;
+	top: -3px;
+}
+.provider-title .service_venue_size{
+	font-size: 17px;
+	color: #666;
+	position: relative;
+	top: -3	px;
+}
+
+.provider-title {
+	
+}
+.listing-div .thumbnail {
+	line-height: 0px;
 }
 
 /* pricing-table
@@ -600,6 +650,8 @@ form label {
 	z-index: 9000;
 	position: relative;
 }
+
+
 /* .pricing-table-intro-col
 ------------------------------------------------------ */
 

@@ -4,7 +4,7 @@
 
           <sidebar></sidebar>
           <div class="span9">
-            <div class="content-main">
+            <div class="content-main provider-single-div">
               <ul class="breadcrumb">
                 <li><a ng-href="/#/service_categories"><span>Home</span></a> <span class="divider">/</span></li>
                 <li ng-show="service"><a ng-href="/#/services/{{ service.name }}"><span>{{ service.display_name }}</span></a> <span class="divider">/</span></li>
@@ -12,7 +12,8 @@
               </ul>
               <div class="row-fluid">
                 <div class="span12">
-                  <h2>{{ provider.name }}
+                  <h2 class="provider-title">{{ provider.name }} <i class="fa fa-users"></i><span class="service_venue_size">{{ provider.venue_size }}</span>
+                  
                     <button ng-show="requestsInCart[provider.id] == null" ng-click="requestQuote()" class="btn btn-warning pull-right">Request Quote</button>
                     <button ng-show="requestsInCart[provider.id] != null" ng-click="unRequestQuote()" class="btn btn-info pull-right">Requested</button>
                   </h2>

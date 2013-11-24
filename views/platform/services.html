@@ -8,13 +8,15 @@
               <h2 class="no-top-margin text-center"><span>{{ service.display_name }}</span></h2>
               <p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien.</p>
               <div class="text-center">
-                <strong>Sort</strong>&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;
                 <div class="btn-group">
                   <button ng-click="services_sort_by('created_at DESC')" class="btn">Recently Added</button>
                   <button ng-click="services_sort_by('overall_rating DESC')" class="btn">Rating</button>
                   <button ng-click="services_sort_by('name DESC')" class="btn">Alphabetical</button>
                 </div>
+                	&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-users"></i>&nbsp;&nbsp;
                 <div class="btn-group" ng-show="service.name == 'venues'">
+
                   <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
                 </div>
               </div>
@@ -26,11 +28,11 @@
                 <tr ng-repeat="provider in providers">
                   <td class="">
                     <div class="span4 thumbnails"><a  ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
-                      <img src="styles/img/thumbs.png" ng-show="provider.provider_pictures.length == 0">
+                      <div class="service-provider-empty-image" ng-show="provider.provider_pictures.length == 0"></div>
                       <img nailthumb width="200" height="150" method="crop" ng-src="{{ provider.provider_pictures[0].avatar_url }}" >
                     </a></div>
                     <div class="span8">
-                      <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a></h4>
+                      <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i class="fa fa-users"></i><span class="service_venue_size">{{ provider.venue_size }}</span></h4>
                       <!--<div class="row-fluid">
                         <p class="span6"><i class="icon-star colored"></i><i class="icon-star colored"></i><i class="icon-star colored"></i><i class="icon-star"></i><i class="icon-star"></i></p><p class="span6"></p>
                       </div>-->
@@ -38,7 +40,7 @@
                       
                       <div class="row-fluid listing-desc-details">
                       
-                        <div class="span6"><a ng-show="provider.reviews.length == 0" ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">More Information ({{ provider.reviews.length }} reviews)</a></div>
+                        <div class="span6"><a ng-show="provider.reviews.length == 0" ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info ({{ provider.reviews.length }} reviews)</a></div>
                         
                         
                         <div class="span6 listing-desc-details-right">
@@ -60,6 +62,20 @@
                      items-per-page="query.per_page"
                      max-size="9"></div>
               </div>
+              <div class="clearfix"></div>
+              <hr>
+              <div class="category-nav-div">
+              	<div class="pull-left">
+              		Finish selecting vendors? <a href="/#/dashboard.member.cart">Review your cart now!</a>
+              	</div>
+              	
+              	<div class="pull-right">
+              		I want to continue on - <a href="">Catering</a> category.  
+              	</div>
+              	
+              
+              </div>
+              
 
 <!--              <hr>
 

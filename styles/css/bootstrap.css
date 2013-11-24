@@ -5275,7 +5275,6 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 .thumbnail {
 	display: block;
 	padding: 4px;
-	line-height: 20px;
 	border: 1px solid #ddd;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
