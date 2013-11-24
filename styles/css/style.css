@@ -151,8 +151,13 @@ body {
 p {
 	color: #666;
 }
-span {
+
+span.orange {
 	color: #f66201;
+}
+
+span {
+
 }
 .orange1{
 	color: #f66201;
@@ -266,6 +271,19 @@ strong {
 	padding: 10px 20px;
 }
 
+
+/* vendor form
+--------------------------------------------------------------------- */
+.vendor-form-list{
+}
+.form-submit-button{
+	text-align: center;
+}
+.form-submit-button .btn{
+display: inline-block;
+float: none;
+}
+
 .content-main {
 	padding: 0px;
 }
@@ -299,7 +317,9 @@ form label {
 	color: #5d5d5d;
 
 }
-
+.map-search-input{
+	margin: 0px!important;
+}
 
 .content-main .events th, .content-main .events td {
 	text-align: center;
@@ -672,6 +692,7 @@ form label {
 	z-index: 9000;
 	position: relative;
 }
+
 
 
 /* .pricing-table-intro-col
