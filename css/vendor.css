@@ -4,9 +4,9 @@
 	position: absolute;
 	height: auto;
 	z-index: 9999;
-	font-size: 16px;
-	line-height: 16px;
-	border: 2px solid #ccc;
+	font-size: 14px;
+	line-height: 18px;
+	border: 1px solid #ccc;
 }
 html>body .ui-pnotify {
 	position: fixed

@@ -1,7 +1,8 @@
 body {
 	margin: 0;
-	font-family: 'Rokkitt', serif !important;
 	overflow-y: scroll;
+	font-size: 13px;
+	line-height: 19px;
 }
 .height-auto{
 	height: auto!important;
@@ -29,9 +30,9 @@ body {
 }
 
 ::-moz-selection {
-background: #888;
-color: #fff;
-text-shadow: none;
+	background: #888;
+	color: #fff;
+	text-shadow: none;
 }
 ::selection {
 	background: #888;
@@ -131,7 +132,7 @@ text-shadow: none;
 }
 .welcome-div .sub-desc {
 	color: #888;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 16px;
 }
 .welcome-div .step-how {
@@ -148,9 +149,7 @@ text-shadow: none;
 }
 
 p {
-	font-size: 13px;
 	color: #666;
-	line-height: 19px;
 }
 span {
 	color: #f66201;
@@ -184,7 +183,7 @@ strong {
 	padding: 10px 0px;
 }
 #top-nav .top-nav-bar {
-	padding-top: 25px;
+	padding-top: 15px;
 }
 #top-nav .top-nav-bar ul {
 	margin-bottom: 10px;
@@ -194,7 +193,8 @@ strong {
 }
 #top-nav .top-nav-bar li a {
 	color: #373435;
-	font-size: 19px;
+	font-size: 15px;
+	line-height: 15px;
 }
 .modal-img img {
 	width: 100%;
@@ -204,7 +204,7 @@ strong {
 }
 .main-container {
 	background-color: #f6f6f6;
-	padding: 40px 0px;
+	padding: 30px 0px;
 	min-height: 240px;
 }
 #main-content {
@@ -231,12 +231,14 @@ strong {
 	padding-left: 0px;
 }
 .sidebar .nav-header {
-	font-size: 16px;
+	font-size: 14px;
+
 	padding: 5px 5px;
 	text-transform: none;
-	border-bottom: none;
 	font-weight: normal;
 	color: #373435;
+	margin-bottom: 5px!important;
+	font-weight: bold;	
 	border-right: 2px solid #fe9f61;
 	margin-right: -17px !important;
 }
@@ -245,7 +247,7 @@ strong {
 	padding: 5px !important;
 	margin-right: 5px !important;
 	color: #373435;
-	font-size: 17px;
+	font-size: 13px;
 }
 .sidebar .btn {
 	margin: 0px 20px 20px;
@@ -295,8 +297,7 @@ strong {
 }
 form label {
 	color: #5d5d5d;
-	font-size: 16px;
-	line-height: 18px;
+
 }
 .content-main .events th, .content-main .events td {
 	text-align: center;
@@ -347,7 +348,7 @@ form label {
 }
 #footer-content li a {
 	color: #888888;
-	font-size: 16px;
+	font-size: 13px;
 }
 
 #footer-content .footer-list {
@@ -432,6 +433,10 @@ form label {
 
 /* provider 
 --------------------------------------------------------------------- */
+.service_table_list .title{
+	margin: 0px 0px 10px;
+}
+
 .service_table_list.table{
 	margin-bottom: 0px;
 }
@@ -725,7 +730,7 @@ sub, sup {
 		margin-left: 40px !important;
 	}
 	li.title {
-		font-size: 14px !important;
+		font-size: 13px !important;
 	}
 	.span3.pricing-table.belize-hole.bordered span {
 		display: block;
