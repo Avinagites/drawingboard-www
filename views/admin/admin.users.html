@@ -16,6 +16,7 @@
                   <th>First name</th>
                   <th>Last name</th>
                   <th>Email</th>
+                  <th>Account Status</th>
                   <th>Reached Via</th>
                   <th>Registered Time</th>
                   <th>Last login</th>
@@ -26,11 +27,15 @@
                   <td>{{ user.first_name }}</td>
                   <td> {{ user.last_name }}</td>
                   <td> {{ user.email }}</td>
+                  <td>{{user.account_status}}</td>
                   <td>{{ user.reached_by }}</td>
                   <td> {{ user.created_at  | date:'MM/dd/yyyy @ h:mma'}}</td>
                   <td>{{ user.last_login  | date:'MM/dd/yyyy @ h:mma'}}</td>
 
-                  <td><a href="#modal-admin-users" role="button" class="" data-toggle="modal"></a></td>
+                  <td>
+                    <a ng-show="user.account_status == 'active'" href ng-click="block_account(user)" >Block</a>
+                    <a ng-show="user.account_status == 'blocked'" href ng-click="activate_account(user)">Activate</a>
+                  </td>
                 </tr>
 
                 </tbody></table>

@@ -5,8 +5,8 @@
     
     
     </li>
-    <li ng-repeat="service in services">
-      <a href ng-click="goTo(service.name)">{{ service.display_name }}</a>
+    <li ui-route ng-href="/#/services/{{service.name}}" ng-class="{active: $uiRoute}" ng-repeat="service in services">
+      <a  ng-href="/#/services/{{service.name}}" >{{ service.display_name }}</a>
     </li>
   </ul>
   <!--<button class="btn btn-large btn-primary" type="button">REVIEW & SUBMIT</button>-->

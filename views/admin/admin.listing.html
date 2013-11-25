@@ -32,7 +32,8 @@
                   <td>{{ provider.created_at | date:medium }}</td>
                   <td>
                     <a ng-show="provider.status == 'Pending Approval'" href ng-click="approve(provider)">Approve</a>
-                    <span  ng-show="provider.status == 'Pending Approval'">|</span>
+                    <a ng-show="provider.status == 'Approved'" href ng-click="disapprove(provider)">Disapprove</a>
+                    <span>|</span>
                     <a ng-href="mailto:{{ provider.vendor.email }}">Email</a>
                   </td>
                 </tr>
