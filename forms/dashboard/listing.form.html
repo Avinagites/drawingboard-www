@@ -65,7 +65,7 @@
   <div class="control-group">
     <span ng-hide="pricingplan == 'basic'">You can only upload up to maximum 4 pictures.</span>
     
-    <span ng-show="pricingplan == 'basic'">You are unable to upload picture with a basic plan. <a href="">Upgrade to premium!</a></span>
+    <span ng-show="pricingplan == 'basic'">You are unable to upload picture with a basic plan. <a href="/#/account.pricing">Upgrade to premium!</a></span>
     
   </div>
 
@@ -132,7 +132,7 @@
     	
       <label>Business Address*</label>
       <textarea
-              ng-model="user.provider.map_address" rows="3" class="span12" name="map_address"
+              ng-model="form_object.map_address" rows="3" class="span12" name="map_address"
               placeholder="Click 'Set the above as Business Address' or paste your own business address here"
               required></textarea>
     </div>
