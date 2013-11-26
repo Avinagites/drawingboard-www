@@ -340,8 +340,17 @@ form label {
 	margin-top: 20px;
 	text-align: center;
 	color: #999;
-	font-size: 12px;
+	font-size: 11px;
 }
+.copyright-div{
+	
+}
+
+.copyright-div .row-fluid [class*="span"]{
+	min-height: 0px;
+}
+
+
 #event-sup, #why-draw, #footer-content, .copyright-div .copyright-wrapper {
 	max-width: 940px;
 	margin: 0 auto;
@@ -364,6 +373,7 @@ form label {
 .control-group .reg-label {
 	width: 80px !important;
 }
+
 #footer {
 	border-top: 1px solid #eee;
 	padding: 20px 0px 0px;
