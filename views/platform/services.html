@@ -40,19 +40,13 @@
               </div>
               <table class="table service_table_list">
                 <tr ng-repeat="provider in providers">
-                  <td class="">
+                  <td ng-class="{featured-paid-div: isPremiumListing(provider)}">
                     <div class="span4 thumbnails"><a  ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
                       <div class="service-provider-empty-image" ng-show="provider.provider_pictures.length == 0"></div>
                       <img nailthumb width="200" height="150" method="crop" ng-src="{{ provider.provider_pictures[0].avatar_url }}" >
                     </a></div>
                     <div class="span8">
                       <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i ng-show="service.name == 'venues'" class="fa fa-users"></i><span ng-show="service.name == 'venues'" class="service_venue_size">{{ provider.venue_size }}</span></h4>
-                      <!--<div class="row-fluid">
-                        <p class="span6"><i class="icon-star colored"></i><i class="icon-star colored"></i><i class="icon-star colored"></i><i class="icon-star"></i><i class="icon-star"></i></p><p class="span6"></p>
-                      </div>-->
-                      <!--<p class="listing-desc-div">{{ provider.browse_description }}
-                      
-                      </p>-->
                       
                       <p class="listing-desc-div">{{ provider.profile_description }}
                       
