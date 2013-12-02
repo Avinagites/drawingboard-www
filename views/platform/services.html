@@ -40,7 +40,7 @@
               </div>
               <table class="table service_table_list">
                 <tr ng-repeat="provider in providers">
-                  <td ng-class="{featured-paid-div: isPremiumListing(provider)}">
+                  <td ng-class="{featured_paid_div: isPremiumListing(provider)}">
                     <div class="span4 thumbnails"><a  ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
                       <div class="service-provider-empty-image" ng-show="provider.provider_pictures.length == 0"></div>
                       <img nailthumb width="200" height="150" method="crop" ng-src="{{ provider.provider_pictures[0].avatar_url }}" >

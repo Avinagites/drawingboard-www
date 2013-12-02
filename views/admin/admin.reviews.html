@@ -1,0 +1,74 @@
+<div class="main-container">
+    <div id="main-content" class="container">
+        <div class="row-fluid">
+
+            <div class="span12">
+                <div class="content-main">
+                    <h3>Flagged reviews</h3>
+                    <table class="admin-table table table-bordered table-condensed table-striped table-hover">
+                        <tr>
+                            <th>Listing</th>
+                            <th>Review Title</th>
+                            <th>Review</th>
+                            <th>Rating</th>
+                            <th>Reviewer</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr ng-repeat="entity in flagged_entities">
+                            <td><a href="/#/provider/{{ entity.provider.id }}">{{ entity.provider.name }}</a></td>
+                            <td>{{ entity.title }}</td>
+                            <td>{{ entity.content }}</td>
+                            <td>{{ entity.rating }}</td>
+                            <td>{{ entity.reviewer.first_name }} {{ entity.reviewer.last_name }}</td>
+                            <td>
+                                <span ng-show="!entity.is_approved">Not approved</span>
+                                <span ng-show="entity.is_approved">Approved</span>
+                            </td>
+                            <td>{{ entity.created_at | date:medium }}</td>
+                            <td>
+                                <a ng-show="!entity.is_approved" href ng-click="approve(entity)">Approve</a>
+                                <a ng-show="entity.is_approved" href ng-click="disapprove(entity)">Disapprove</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                </div>
+                <div class="content-main">
+                    <h3>All reviews</h3>
+                    <table class="admin-table table table-bordered table-condensed table-striped table-hover">
+                        <tr>
+                            <th>Listing</th>
+                            <th>Review Title</th>
+                            <th>Review</th>
+                            <th>Rating</th>
+                            <th>Reviewer</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr ng-repeat="entity in entities">
+                            <td><a href="/#/provider/{{ entity.provider.id }}">{{ entity.provider.name }}</a></td>
+                            <td>{{ entity.title }}</td>
+                            <td>{{ entity.content }}</td>
+                            <td>{{ entity.rating }}</td>
+                            <td>{{ entity.reviewer.first_name }} {{ entity.reviewer.last_name }}</td>
+                            <td>
+                                <span ng-show="!entity.is_approved">Not approved</span>
+                                <span ng-show="entity.is_approved">Approved</span>
+                            </td>
+                            <td>{{ entity.created_at | date:medium }}</td>
+                            <td>
+                                <a ng-show="!entity.is_approved" href ng-click="approve(entity)">Approve</a>
+                                <a ng-show="entity.is_approved" href ng-click="disapprove(entity)">Disapprove</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

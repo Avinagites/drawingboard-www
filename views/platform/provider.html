@@ -139,6 +139,10 @@
                     </div>
                   </div>
                   <p>{{ review.content }}</p>
+
+                  <div class="row-fluid" ng-show="review.flagged == false && user_type == 'member'">
+                      <div class="span12"><a href ng-click="flagReview(review)" class="btn btn-danger">Report Inappriopriate</a></div>
+                  </div>
 <!--
                   <div class="row-fluid">
                     <div class="span8">1 of 1 people found this review helpful, did you?</div>

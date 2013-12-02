@@ -1,41 +1,57 @@
 <div class="main-container">
-  <div id="main-content" class="container">
-    <div class="row-fluid">
+    <div id="main-content" class="container">
+        <div class="row-fluid">
 
-          <div class="span3 sidebar">
-            <ul class="nav nav-list">
-              <li class="nav-header">Account</li>
-              <li class="active"><a href>Listing</a></li>
-              <li><a href="/#/dashboard.vendor.profile">My Profile</a></li>
-            </ul>
-          </div>
-          <div class="span9">
-            <div class="content-main">
-              <h3>My Listing</h3>
-              <p>Kindly proceed to <b>pay</b> your listing to get your business up on our platform if you haven't done so. We will then proceed to verify your business listing.</p>
-              <hr>
-              <table class="events table table-bordered table-condensed">
-                <tr>
-                  <th>Name</th>
-                  <th>Type of service</th>
-                  <th>Price plan</th>
-                  <th>Status</th>
-                  <th>Expiry</th>
-                  <th class="span3">Details</th>
-                </tr>
-                <tr ng-repeat="provider in current_user.providers">
-                  <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
-                  <td><span>{{ provider.service.display_name }}</span></td>
-                  <td>{{ provider.priceplan.name }}</td>
-                  <td>{{ provider.status }} <span ng-if="provider.status == 'Pending Payment' && provider.priceplan.code != 'basic' ">| <a href="/#/dashboard.payment/{{ provider.id }}">Pay</a></span></td>
-                  <td>{{ provider.expiry | date:medium }}</td>
-                  <td><a ng-href="/#/listing.edit/{{ provider.id }}">Edit</a></td>
-                </tr>
-              </table>
-              <hr>
+            <div class="span3 sidebar">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Account</li>
+                    <li class="active"><a href>Listing</a></li>
+                    <li><a href="/#/dashboard.vendor.profile">My Profile</a></li>
+                </ul>
             </div>
+            <div class="span9">
+                <div class="content-main">
+                    <h3>My Listing</h3>
+                    <p>Kindly proceed to <b>pay</b> your listing to get your business up on our platform if you haven't done so. We will then proceed to verify your business listing.</p>
+                    <hr>
+                    <table class="events table table-bordered table-condensed">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type of service</th>
+                            <th>Price plan</th>
+                            <th>Payment Status</th>
+                            <th>Expiry</th>
+                            <th class="span3">Details</th>
+                        </tr>
+                        <tr ng-repeat="provider in current_user.providers">
+                            <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
+                            <td><span>{{ provider.service.display_name }}</span></td>
+                            <td>{{ provider.priceplan.name }}</td>
+                            <td ng-switch on="paymentStatus(provider)">
+                    <span ng-switch-when="Paid">
+                      Paid
+                    </span>
+                    <span ng-switch-when="Free plan">
+                      Free plan
+                    </span>
+                    <span ng-switch-when="Not paid">
+                      <a href="/#/dashboard.payment/{{ provider.id }}">Pay</a>
+                    </span>
+                    <span ng-switch-when="Payment not completed">
+                      <a href="/#/dashboard.payment/{{ provider.id }}">Pay</a>
+                    </span>
+                    <span ng-switch-when="Payment failed">
+                      <a href="/#/dashboard.payment/{{ provider.id }}">Pay</a>
+                    </span>
+                            </td>
+                            <td>{{ provider.expiry | date:medium }}</td>
+                            <td><a ng-href="/#/listing.edit/{{ provider.id }}">Edit</a></td>
+                        </tr>
+                    </table>
+                    <hr>
+                </div>
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
