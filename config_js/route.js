@@ -12,6 +12,7 @@ angular.module('pages').config(['$routeProvider', 'WardenProvider', function($ro
             .when('blog')
             .when('why_list_our_business')
             .when('advertise')
+            .when('page_not_found')
             .when('newsletter');
     }
 ]);

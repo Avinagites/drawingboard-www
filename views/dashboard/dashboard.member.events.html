@@ -21,14 +21,24 @@
                 <tr>
                   <th>Event Date</th>
                   <th>Event Name</th>
+                  <th>Status</th>
+                  <th>Submission Status</th>
                   <th>DrawingBoard(s) submitted</th>
                   <th class="span3">Details</th>
                 </tr>
                 <tr ng-repeat="event in current_user.upcoming_events">
                   <td>{{ event.date }}</td>
                   <td><span>{{ event.name }}</span></td>
-                  <td>Submitted on {{ event.updated_at | date:'MM/dd/yyyy @ h:mma' }}</td>
-                  <td><a ng-href="/#/dashboard.member.checkout/{{ event.id }}">Edit</a></td>
+                  <td>{{event.status}}</td>
+                  <td>
+                      <span ng-show="event.is_submitted">Submitted on {{ event.submitted_at | date:'MM/dd/yyyy @ h:mma' }}</span>
+                      <span ng-show="!event.is_submitted">Have Not Submitted</span>
+                  </td>
+                  <td>{{event.request_for_quotes.length}}</td>
+                  <td>
+                      <a ng-show="event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">View</a>
+                      <a ng-show="!event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">Submit</a>
+                  </td>
                 </tr>
               </table>
               <hr>

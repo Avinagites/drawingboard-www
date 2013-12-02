@@ -24,8 +24,8 @@
                 </accordion>
               </div>
 
-              <div ng-if="user_type == 'member' && !cartIsEmpty">
-                <div ng-if="current_user.upcoming_events.length > 0">
+              <div ng-show="user_type == 'member' && !cartIsEmpty">
+                <div ng-show="current_user.upcoming_events.length > 0">
                   These services are for:
                   <select ng-model="selected_event" ng-options="value.id as value.name for value in current_user.upcoming_events"></select>
                 </div>

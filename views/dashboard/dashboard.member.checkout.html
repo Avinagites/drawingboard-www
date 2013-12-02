@@ -13,6 +13,7 @@
                         <label>** Your contact details will only be shared with the specific vendor that you are requesting quotes from. DrawingBoard events will not share your contact details with other vendors or third party websites.</label>
                       </div>
                     </div>
+
                     <hr>
                     <div class="row-fluid control-group">
                       <div>
@@ -25,6 +26,7 @@
                       <div>
                         <label>Date</label>
                         <input class="span4" type="text" ng-model="form_object.date" name="date" required
+                               min="date_for_tomorrow"
                                datepicker-popup="dd-MMMM-yyyy" show-weeks="false" placeholder="30 / 1 / 2013">
                       </div>
                     </div>
