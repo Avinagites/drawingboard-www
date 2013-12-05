@@ -74,7 +74,7 @@
               </div>
               <hr>
 
-              <div id="listing-reviews">
+              <div id="listing-reviews" ng-show="provider.priceplan.code != 'basic'">
                 <div class="row-fluid">
                   <h4 class="span12">{{ reviews.length }} / {{ total_review_results }} reviews from our community</h4>
                                     
@@ -141,7 +141,7 @@
                   <p>{{ review.content }}</p>
 
                   <div class="row-fluid" ng-show="review.flagged == false && user_type == 'member'">
-                      <div class="span12"><a href ng-click="flagReview(review)" class="btn btn-danger">Report Inappriopriate</a></div>
+                      <div class="span12"><a href ng-click="flagReview(review)" class="btn btn-danger">Report Inappropriate</a></div>
                   </div>
 <!--
                   <div class="row-fluid">

@@ -33,6 +33,7 @@
                   <td>{{ user.last_login  | date:'MM/dd/yyyy @ h:mma'}}</td>
 
                   <td>
+                    <a ng-show="user._type == 'Vendor'" href="/#/admin.vendor.show/{{ user.id }}">View Details</a>
                     <a ng-show="user.account_status == 'active'" href ng-click="block_account(user)" >Block</a>
                     <a ng-show="user.account_status == 'blocked'" href ng-click="activate_account(user)">Activate</a>
                   </td>

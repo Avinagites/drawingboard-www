@@ -8,7 +8,10 @@
 			<div class="pull-right" ng-show="service_index != max_index">
 				<a href ng-click="goNext()">Next: {{nextCategory.display_name}}</a>
 			</div>
-		
+
+            <div class="pull-right" ng-show="service_index == max_index">
+                <a href="/#/dashboard.member.cart">Checkout</a>
+            </div>
 		</div>	
 	</div>
 	
