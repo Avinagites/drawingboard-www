@@ -395,7 +395,7 @@ form label {
 
 #footer-content .directory ul {
 	list-style: none;
-	padding: 0 0 0 15px;
+	padding: 7px 0 0 0px;
 	margin: 0 15px 0 0;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -404,14 +404,21 @@ form label {
 }
 #footer-content .directory ul li {
 	line-height: 23px;
+	float: left;
+	margin-right: 20px;
 	
 }
 #footer-content .directory li:before {
-	content: "• ";
+/*	content: "• ";
 	color: #f66201;
 	font-size: 17px;
 	margin-left: -15px;
-	padding-right: 5px;
+	padding-right: 5px;*/
+}
+
+.footer-social-div {
+	text-align:right;
+	
 }
 #footer-content h4 {
 	font-size: 24px;

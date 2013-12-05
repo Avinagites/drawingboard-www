@@ -8,30 +8,30 @@
         
         <div class="span9">
           <div class="content-main">
-            <h2 class="text-center">WELCOME TO YOUR <span>DRAWING BOARD</span></h2>
+            <h2 class="text-center">WELCOME TO YOUR <span class="orange">DRAWING BOARD</span></h2>
             <div id="howto" class="row-fluid">
               <div class="span12 text-center">
-                <h3>How to use your Drawing Board?</h3>
+                <h4>Plan your next event or party, request multiple quotes in an instant and let us help you make it happen. And did we mention it’s absolutely FREE to use?</h4>
                 <div class="row-fluid">
                   <div class="span3">
                     <img src="styles/img/home-wine-icon.png"><span><img src="styles/img/arrow.png"></span>
-                    <p><strong>User come to the site</strong></p>
-                    <p>Login to their accounts</p>
+                    <p><strong>BROWSE</strong></p>
+                    <p>Browse our directory of vendors</p>
                   </div>
                   <div class="span3">
                     <img src="styles/img/how2.png"><span><img src="styles/img/arrow.png"></span>
-                    <p><strong>Browse event suppliers</strong></p>
-                    <p>Add the right suppliers to cart</p>
+                    <p><strong>SELECT</strong></p>
+                    <p>Read reviews by users just like yourself</p>
                   </div>
                   <div class="span3">
                     <img src="styles/img/how3.png"><span><img src="styles/img/arrow.png"></span>
-                    <p><strong>Submit a form</strong></p>
-                    <p>The form then will send the details to all event suppliers</p>
+                    <p><strong>SUBMIT</strong></p>
+                    <p>Request multiple quotes with a single click</p>
                   </div>
                   <div class="span3">
                     <img src="styles/img/how4.png">
-                    <p><strong>Event suppliers contact the user</strong></p>
-                    <p>Done!</p>
+                    <p><strong>PARTY!</strong></p>
+                    <p>Sit back and watch the quotes roll in!</p>
                   </div>
                   <div class="span11"><hr ng-if="authenticated && user_type=='member'"></div>
                 </div>
@@ -39,7 +39,7 @@
             </div>
             <div ng-if="user_type!='vendor'" class="welcome-event-box">
               <h3 class="text-center"><span>CREATE YOUR EVENT</span></h3>
-              <p class="text-center"><b>Choose vendors and request quotes using our free, easy-to-use drawingboard too</b></p>
+              <p class="text-center"><b>Start by giving us details of your event</b></p>
               <form event-form user="current_user" type="new" ng-if="user_type == 'member'"></form>
               <form event-form type="to_cache" ng-if="!authenticated"></form>
             </div>
@@ -55,7 +55,7 @@
 <div id="home-content">
   <div id="event-sup" class="row-fluid">
     <div class="span12 text-center">
-      <h3>Start off by choosing your <span>event suppliers</span> first!</h3>
+      <h3>Or if you’re just here to browse</h3>
       <div service-categories></div>
     </div>
   </div>
