@@ -13,6 +13,7 @@ angular.module('pages').config(['$routeProvider', 'WardenProvider', function($ro
             .when('why_list_our_business')
             .when('advertise')
             .when('page_not_found')
+            .when('merchant_details')
             .when('newsletter');
     }
 ]);

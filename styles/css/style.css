@@ -294,6 +294,10 @@ float: none;
 .content-main i {
 	color: #b0b0b0;
 }
+.content-main i.fa-info-circle {
+	color: #e85b00;
+}
+
 .content-main .table .title a {
 	font-size: 22px;
 	color: #393637;
