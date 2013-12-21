@@ -64,6 +64,7 @@
                     </div>
                     <hr>
                     <h3>Quotes to be requested from:</h3>
+                    <h5 class="text-red">Click on the category to add specific comment / request for the vendor(s).</h5>
                     <accordion close-others="true">
                       <accordion-group ng-repeat="(key, value) in form_object.cart">
                         <accordion-heading>
@@ -73,7 +74,7 @@
                           <a ng-click="remove(key, id)" class="a-remove">Remove</a>
                         </div>
                         <div class="cart-item-div">
-                          <div class="text-grey">Questions/Comments for this category</div>
+                          <strong>Questions/Comments for this category</strong>
                           <textarea ng-model="form_object.questions[key]" rows="2" class="span12"></textarea>
                         </div>
                       </accordion-group>

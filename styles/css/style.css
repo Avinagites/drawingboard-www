@@ -47,6 +47,10 @@ body {
 	color: white!important;	
 }
 
+.text-red{
+	color: #fb0a2a!important;
+}
+
 .text-grey {
 	color: #999999;
 }
@@ -566,6 +570,15 @@ form label {
 	text-decoration: none;
 	background-color: #aaa;
 }
+
+.category-nav-div-top .right-checkout-1 {
+	position: absolute;
+	right: 0px;
+	top: 48px;
+}
+
+
+
 
 /* pricing-table
 ---------------------------------------------------------------------- */
