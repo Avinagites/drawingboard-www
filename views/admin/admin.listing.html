@@ -14,6 +14,7 @@
                             <th>Approved?</th>
                             <th>Payment Status</th>
                             <th>Expiry</th>
+                            <th>Num of Reviews</th>
                             <th>Vendor Details</th>
                             <th>Created At</th>
                             <th>Actions</th>
@@ -27,6 +28,7 @@
                             <td ng-if="provider.priceplan.code == 'basic'">Free</td>
                             <td ng-if="provider.priceplan.code != 'basic'">{{ provider.last_payment.status }}</td>
                             <td>{{ provider.expiry | date:medium }}</td>
+                            <td>{{ provider.reviews.length }}</td>
                             <td>
                                 <strong>{{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</strong><br>
                                 <strong>{{ provider.vendor.email }}</strong><br>

@@ -15,7 +15,7 @@
                         <btn ng-click="changeTrigger()" class="btn btn-warning">Use</btn>
                     </div>
 
-                    <p>You have been entitled to 10% discount for this plan</p>
+                    <p ng-show="discount > 0">You have been entitled to {{ discount }}% discount for this plan</p>
                     <div class="clearfix"></div>
                     <hr>
                     <a href ng-click="pay()" class="paypal-btn btn button-paypal">Checkout using <img src="styles/img/paypal-button.png"></a>

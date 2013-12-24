@@ -1,128 +1,132 @@
 <div class="main-container">
-	<div class="">
-		<div class="category-nav-div-top" >
-			<div class="pull-left" ng-show="service_index != 0">
-				<a href ng-click="goPrev()">Previous: {{prevCategory.display_name}}</a>
-			</div>
-			
-			<div class="pull-right" ng-show="service_index != max_index">
-				<a href ng-click="goNext()">Next: {{nextCategory.display_name}}</a>
-			</div>
-			<div class="pull-right right-checkout-1" ng-show="service_index != max_index">
-				<a href="/#/dashboard.member.checkout/">Checkout</a>
-			</div>
+  <div class="">
+    <div class="category-nav-div-top" >
+      <div class="pull-left" ng-show="service_index != 0">
+        <a href ng-click="goPrev()">Previous: {{prevCategory.display_name}}</a>
+      </div>
+
+      <div class="pull-right" ng-show="service_index != max_index">
+        <a href ng-click="goNext()">Next: {{nextCategory.display_name}}</a>
+      </div>
+      <div class="pull-right right-checkout-1" ng-show="service_index != max_index">
+        <a href="/#/dashboard.member.checkout/">Checkout</a>
+      </div>
 
 
-            <div class="pull-right" ng-show="service_index == max_index">
-                <a href="/#/dashboard.member.checkout/">Finalise</a>
-            </div>
-		</div>	
-	</div>
-	
+      <div class="pull-right" ng-show="service_index == max_index">
+        <a href="/#/dashboard.member.checkout/">Finalise</a>
+      </div>
+    </div>
+  </div>
+
   <div id="main-content" class="container">
     <div class="row-fluid">
 
-          <sidebar></sidebar>
-          <div class="span9 listing-div">
-            <div class="content-main">
-              <h2 class="no-top-margin text-center"><span>{{ service.display_name }}</span></h2>
-              <p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien.</p>
-              <div class="text-center">
-                <i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;
-                <div class="btn-group">
-                  <button ng-click="services_sort_by('created_at DESC')" class="btn">Recently Added</button>
-                  <button ng-click="services_sort_by('overall_rating DESC')" class="btn">Rating</button>
-                  <button ng-click="services_sort_by('name DESC')" class="btn">Alphabetical</button>
-                </div>
-                	&nbsp;&nbsp;&nbsp;&nbsp;<i ng-show="service.name == 'venues'" class="fa fa-users"></i>&nbsp;&nbsp;
-                <div class="btn-group" ng-show="service.name == 'venues'">
-
-                  <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
-                </div>
-              </div>
-              <br>
-              <div class="text-center" ng-show="providers.length == 0">
-                There is no services under this category yet. Stay tuned.
-              </div>
-              <table class="table service_table_list">
-                <tr ng-repeat="provider in providers">
-                  <td ng-class="{featured_paid_div: isPremiumListing(provider)}">
-                    <div class="span4 thumbnails"><a  ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
-                      <div class="service-provider-empty-image" ng-show="provider.provider_pictures.length == 0"></div>
-                      <img nailthumb width="200" height="150" method="crop" ng-src="{{ provider.provider_pictures[0].avatar_url }}" >
-                    </a></div>
-                    <div class="span8">
-                      <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i ng-show="service.name == 'venues'" class="fa fa-users"></i><span ng-show="service.name == 'venues'" class="service_venue_size">{{ provider.venue_size }}</span></h4>
-                      
-                      <p class="listing-desc-div">{{ provider.profile_description }}
-                      
-                      </p>
-                      
-                      
-                      
-                      <div class="row-fluid listing-desc-details">
-                      
-                        <div class="span6"><a ng-show="provider.reviews.length == 0" ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info ({{ provider.reviews.length }} reviews)</a></div>
-                        
-                        
-                        <div class="span6 listing-desc-details-right">
-                       
-                               
-                        <a ng-show="requestsInCart[provider.id] == null" href ng-click="requestQuote(provider)" class="btn btn-warning" tooltip="A quote request email will be sent to this vendor" tooltip-placement="right">Request Quote</a>
-                        
-                        <span ng-show="requestsInCart[provider.id] != null" href ng-click="unRequestQuote(provider)" class="btn btn-info">Quote Requested</span>
-                      </div>
-                      
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-
-              <div ng-if="providers.length > 0">
-                <hr>
-                <div class="pull-right" pagination
-                     total-items="total_results"
-                     page="query.page"
-                     items-per-page="query.per_page"
-                     max-size="9"></div>
-              </div>
-              <div class="clearfix"></div>
-              <hr>
-              <div class="category-nav-div">
-              
-              <!--<div class="pull-left">
-              	Finish selecting {{service.display_name}}? <a href="/#/dashboard.member.checkout/">Finalise your list of quote requests here</a>
-              </div>-->
-              
-              	<div class="pull-left">
-              		<a href="/#/dashboard.member.checkout/">Finalise your list of quote requests</a>
-              	</div>
-              	
-              	<div class="pull-right" ng-show="hasNextCategory">
-              		Continue on - <a ng-href="/#/services/{{nextCategory.name}}">{{nextCategory.display_name}}</a> category.
-              	</div>
-              	
-              
-              </div>
-              
-
-<!--              <hr>
-
-              <div class="pagination pull-right">
-                <ul>
-                  <li><a href="#">«</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">»</a></li>
-                </ul>
-              </div>-->
-
+      <sidebar></sidebar>
+      <div class="span9 listing-div">
+        <div class="content-main">
+          <h2 class="no-top-margin text-center"><span>{{ service.display_name }}</span></h2>
+          <p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien.</p>
+          <div class="text-center">
+            <i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;
+            <div class="btn-group">
+              <button ng-click="services_sort_by('created_at DESC')" class="btn">Recently Added</button>
+              <button ng-click="services_sort_by('overall_rating DESC')" class="btn">Rating</button>
+              <button ng-click="services_sort_by('name DESC')" class="btn">Alphabetical</button>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;<i ng-show="service.name == 'venues'" class="fa fa-users"></i>&nbsp;&nbsp;
+            <div class="btn-group" ng-show="service.name == 'venues'">
+              <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
+            </div>
+            <div class="btn-group" ng-show="service.name == 'venues'">
+              <button ng-click="filter_by_venue_type('wedding_celebrations')" class="btn">Wedding Celebrations</button>
+              <button ng-click="filter_by_venue_type('business_functions')" class="btn">Business Functions</button>
+              <button ng-click="filter_by_venue_type('party_and_dance')" class="btn">Party and Dance</button>
             </div>
           </div>
+          <br>
+          <div class="text-center" ng-show="providers.length == 0">
+            There is no services under this category yet. Stay tuned.
+          </div>
+          <table class="table service_table_list">
+            <tr ng-repeat="provider in providers">
+              <td ng-class="{featured_paid_div: isPremiumListing(provider)}">
+                <div class="span4 thumbnails"><a  ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
+                  <div class="service-provider-empty-image" ng-show="provider.provider_pictures.length == 0"></div>
+                  <img nailthumb width="200" height="150" method="crop" ng-src="{{ provider.provider_pictures[0].avatar_url }}" >
+                </a></div>
+                <div class="span8">
+                  <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i ng-show="service.name == 'venues'" class="fa fa-users"></i><span ng-show="service.name == 'venues'" class="service_venue_size">{{ provider.venue_size }}</span></h4>
+
+                  <p class="listing-desc-div">{{ provider.profile_description }}
+
+                  </p>
+
+
+
+                  <div class="row-fluid listing-desc-details">
+
+                    <div class="span6"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info <span ng-show="provider.reviews.length > 0" >({{ provider.reviews.length }} reviews)</span></a></div>
+
+
+                    <div class="span6 listing-desc-details-right">
+
+
+                      <a ng-show="requestsInCart[provider.id] == null" href ng-click="requestQuote(provider)" class="btn btn-warning" tooltip="A quote request email will be sent to this vendor" tooltip-placement="right">Request Quote</a>
+
+                      <span ng-show="requestsInCart[provider.id] != null" href ng-click="unRequestQuote(provider)" class="btn btn-info">Quote Requested</span>
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <div ng-if="providers.length > 0">
+            <hr>
+            <div class="pull-right" pagination
+                 total-items="total_results"
+                 page="query.page"
+                 items-per-page="query.per_page"
+                 max-size="9"></div>
+          </div>
+          <div class="clearfix"></div>
+          <hr>
+          <div class="category-nav-div">
+
+            <!--<div class="pull-left">
+              Finish selecting {{service.display_name}}? <a href="/#/dashboard.member.checkout/">Finalise your list of quote requests here</a>
+            </div>-->
+
+            <div class="pull-left">
+              <a href="/#/dashboard.member.checkout/">Finalise your list of quote requests</a>
+            </div>
+
+            <div class="pull-right" ng-show="hasNextCategory">
+              Continue on - <a ng-href="/#/services/{{nextCategory.name}}">{{nextCategory.display_name}}</a> category.
+            </div>
+
+
+          </div>
+
+
+          <!--              <hr>
+
+                        <div class="pagination pull-right">
+                          <ul>
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">»</a></li>
+                          </ul>
+                        </div>-->
+
+        </div>
+      </div>
 
 
     </div>

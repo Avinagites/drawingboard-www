@@ -38,10 +38,18 @@
               </div>
             </div>
             <div ng-if="user_type!='vendor'" class="welcome-event-box">
-              <h3 class="text-center"><span>CREATE YOUR EVENT</span></h3>
-              <p class="text-center"><b>Start by giving us details of your event</b></p>
-              <form event-form user="current_user" type="new" ng-if="user_type == 'member'"></form>
-              <form event-form type="to_cache" ng-if="!authenticated"></form>
+              <div ng-show="!in_progress">
+                <h3 class="text-center"><span>CREATE YOUR EVENT</span></h3>
+                <p class="text-center"><b>Start by giving us details of your event</b></p>
+                <form event-form user="current_user" type="new" ng-if="user_type == 'member'"></form>
+                <form event-form type="to_cache" ng-if="!authenticated"></form>
+              </div>
+              <div ng-show="in_progress">
+                <h3 class="text-center"><span>YOUR EVENT IS READY</span></h3>
+                <p class="text-center"><b>Proceed to request quotes from our vendors now</b></p>
+                <a class="btn btn-danger" href="/#/services/venues">Proceed</a>
+              </div>
+
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@
 
                 </tr>
                 <tr ng-repeat="event in events">
-                  <td>{{ event.name }}</td>
+                  <td><a target="_blank" ng-href="/#/event.show/{{ event.id }}">{{ event.name }}</td>
                   <td>{{ event.date | date:medium }}</td>
                   <td>{{ event.member.first_name }} {{ event.member.last_name }}</td>
                   <td>{{ event.created_at | date:medium }}</td>

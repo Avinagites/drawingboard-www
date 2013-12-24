@@ -6,7 +6,7 @@
           <div class="span3 sidebar">
             <ul class="nav nav-list">
               <li class="nav-header">Account</li>
-              <li class="active"><a href">My Events</a></li>
+              <li class="active"><a href>My Events</a></li>
               <li><a href="/#/dashboard.member.profile">My Profile</a></li>
             </ul>
           </div>
@@ -28,7 +28,7 @@
                 </tr>
                 <tr ng-repeat="event in current_user.upcoming_events">
                   <td>{{ event.date }}</td>
-                  <td><span>{{ event.name }}</span></td>
+                  <td><span><a target="_blank" ng-href="/#/event.show/{{ event.id }}">{{ event.name }}</a></span></td>
                   <td>{{event.status}}</td>
                   <td>
                       <span ng-show="event.is_submitted">Submitted on {{ event.submitted_at | date:'MM/dd/yyyy @ h:mma' }}</span>
@@ -36,8 +36,9 @@
                   </td>
                   <td>{{event.request_for_quotes.length}}</td>
                   <td>
-                      <a ng-show="event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">View</a>
-                      <a ng-show="!event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">Submit</a>
+                    <a target="_blank" ng-href="/#/event.show/{{ event.id }}">View</a>
+                    <a ng-show="event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">Edit</a>
+                    <a ng-show="!event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">Submit</a>
                   </td>
                 </tr>
               </table>
@@ -54,7 +55,7 @@
                 </tr>
                 <tr ng-repeat="event in current_user.past_events">
                   <td>{{ event.date }}</td>
-                  <td><span>{{ event.name }}</span></td>
+                  <td><span><a target="_blank" ng-href="/#/event.show/{{ event.id }}">{{ event.name }}</a></span></td>
                   <td>Submitted on {{ event.updated_at | date:'MM/dd/yyyy @ h:mma' }}</td>
                   <td>This event is over</td>
                 </tr>

@@ -25,18 +25,18 @@
   </div>
 </div>
 
-<!--  <div class="control-group" ng-class="{error: hasError(form.vendor_address)}">
-    <label class="control-label" for="inputAddress">Vendor address</label>
-    <div class="controls">
-      <textarea ng-model="user.provider.address" name="vendor_address" required></textarea>
-    </div>
-  </div>-->
-<!--<div class="row-fluid control-group" ng-class="{error: hasError(form.browse_description)}">
-  <div class="span12">
-    <label>Brief description to appear on browsing page</label>
-    <textarea ng-model="user.provider.browse_description" name="browse_description" rows="3" class="span12"></textarea>
+<div class="control-group" ng-show="user.provider.service.name == 'venues'">
+  <label class="control-label" for="inputService">Venue suitable for</label>
+  <div class="controls">
+    <input type="checkbox"
+           ng-model="venue_suitable_for_checkboxes.wedding_celebrations"/>Wedding Celebrations</br>
+    <input type="checkbox"
+           ng-model="venue_suitable_for_checkboxes.business_functions"/>Business Functions</br>
+    <input type="checkbox"
+           ng-model="venue_suitable_for_checkboxes.party_and_dance"/>Party And Dance</br>
   </div>
-</div>-->
+</div>
+
 <div class="row-fluid control-group"  ng-class="{error: hasError(form.profile_description)}">
   <div class="span12">
     <label>Business Introduction</label>
@@ -44,9 +44,7 @@
   </div>
 </div>
 
-
 <hr>
-
 
 <h4>Upload Pictures</h4>
 

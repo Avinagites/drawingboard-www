@@ -16,9 +16,11 @@
               <!--<li><a href="/#/dashboard.member.cart">Cart ({{cart.numberOfItems}})</a></li>-->
               <li><a href="/#/dashboard.member.events" data-toggle="">My Events</a></li>
               <li><a href ng-click="logout()">Logout</a></li>
-              <li><a href="/#/event.new">
-                <button class="btn btn-primary" type="button">New Event</button>
-                </a></li>
+              <li>
+                <a ng-show="!in_progress" href="/#/event.new">
+                  <button class="btn btn-primary" type="button">New Event</button>
+                </a>
+              </li>
             </ul>
             
             <!-- MEMBER --> 
