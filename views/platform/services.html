@@ -26,7 +26,50 @@
       <div class="span9 listing-div">
         <div class="content-main">
           <h2 class="no-top-margin text-center"><span>{{ service.display_name }}</span></h2>
-          <p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien.</p>
+          <div ng-switch on="service.name">
+            <p ng-switch-when="supplies_and_party_favours">
+              From disposable cutlery to paper plates and cups, save yourself the stresses of cleaning up after your successful party or event. This category also features all sorts of fun items, from door gifts for your guests to photo booth props, from candy buffets to those little sparkles that kids love to pop off.
+            </p>
+            <p ng-switch-when="novelty_services">
+              We’re sure you’ll have just as much fun browsing this category as we did putting it together! From jumping castles to face painting, why not hire someone to add that extra bit of fun and uniqueness to your party or event? Have your guests talking about how unique your party or event was long after they’ve left!
+            </p>
+            <p ng-switch-when="hair_and_beauty">
+              Planning a wedding? Important birthday or corporate function? Find the perfect hair and makeup artists that will accentuate your beauty. We’ve compiled a directory of very talented makeup artists and hair stylists to have you looking at your best.
+            </p>
+            <p ng-switch-when="fashion_and_accessories">
+              Look and feel like a million dollars on your special day. We’ve compiled an extensive list of quality boutiques featuring local and international designers who can cater for all your fashion and accessory needs. Find the perfect bridal dress, accessories and even the groom’s shoes – it’s just one click away.
+            </p>
+            <p ng-switch-when="invitations_and_stationery">
+              Where, when and why! Invitations to ensure your guests know where and when your awesome party will be held. Don’t forget that stationery such as custom made menus and program sheets are particularly important if your event or party has a sequence to it, such as a wedding or dinner and dance.
+            </p>
+            <p ng-switch-when="flowers">
+              Flowers are key to the décor of any wedding. That said, fresh, beautiful flowers will add that touch of class and elegance to any event, from your daughter’s 16th birthday to that corporate event you’re planning to impress clients at. Our directory of skilled florists will put together a package that’s right for you, so start getting in touch now.
+            </p>
+            <p ng-switch-when="decor">
+              Have a theme in mind? Want to capture that fabulous table setting from Pinterest? Our list of businesses in this category stock everything you’ll need from streamers to tablecloths to chair covers. Have fun mixing and matching or get all the decorations to fit your theme!
+            </p>
+            <p ng-switch-when="transport">
+              Don’t just get from point A to B, do it in style! Rent a limo and driver for your wedding or charter a minibus to get your guests to your venue. Or if you prefer, book a classic car and cruise in it yourself!
+            </p>
+            <p ng-switch-when="cakes">
+              Be it a birthday party or wedding, cutting into a beautifully made cake marks the highlight of many a special occasion. It also needs to be delicious as well! Whether you’re after a tiered cake, cake pops or cupcakes, we’ve got it all covered in our extensive list of cake vendors.
+            </p>
+            <p ng-switch-when="videography">
+              Be the star in your own movie! Videographers play a central role in documenting that special day, often in tandem with your photographer. We’ve put together an extensive list for you to pick from. Browse what other customers like yourself have to say and when you’re ready, request a quote or two to get the ball rolling.
+            </p>
+            <p ng-switch-when="entertainment">
+              DJ or live band? Do you want an MC as well? Either way, break that wall of silence by having a professional set the tone for the evening. Our list of versatile entertainers even include comedians and magicians. You will find everything you need here to entertain and thrill your crowd.
+            </p>
+            <p ng-switch-when="photography">
+              A great party or event deserves to be remembered for a long time. A good photographer (or group of photographers) will ensure that every special moment will be captured, for you to revisit time and time again. Needless to say, getting the right photographer is especially vital if it’s a wedding that you’re planning. Good photographers get booked early so start requesting those quotes now!
+            </p>
+            <p ng-switch-when="catering">
+              Here is where you will really get spoilt for choice. Singapore is a food lovers’ paradise after all! Our list of caterers offer a wide variety of cuisines that will suit any theme and specifications. From ethnic to fusion, pick a caterer that will have your guests leaving with a full stomach and a smile on their faces!
+            </p>
+            <p ng-switch-when="venues">
+              Hands down the most important aspect to ensuring your party or event is a success. Picking the right venue and picking it early is particularly critical if a wedding is what you’re planning. Our hand-picked list of venues, from bars to restaurants and hotels, is both extensive and diverse so we’re confident you’ll find what you need here.
+            </p>
+          </div>
           <div class="text-center">
             <i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;
             <div class="btn-group">
