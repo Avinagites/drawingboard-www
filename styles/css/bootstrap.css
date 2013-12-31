@@ -5066,7 +5066,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 }
 .tooltip {
 	position: absolute;
-	z-index: 1030;
+	z-index: 9990;
 	display: block;
 	visibility: visible;
 	font-size: 11px;

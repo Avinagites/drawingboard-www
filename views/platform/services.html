@@ -9,7 +9,7 @@
         <a href ng-click="goNext()">Next: {{nextCategory.display_name}}</a>
       </div>
       <div class="pull-right right-checkout-1" ng-show="service_index != max_index">
-        <a href="/#/dashboard.member.checkout/">Checkout</a>
+        <a href="/#/dashboard.member.checkout/">Finalise Quote Requests</a>
       </div>
 
 
@@ -81,7 +81,12 @@
             <div class="btn-group" ng-show="service.name == 'venues'">
               <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
             </div>
+            <hr>
+            
+            <i class="fa fa-coffee"></i>&nbsp;&nbsp;
+            
             <div class="btn-group" ng-show="service.name == 'venues'">
+            
               <button ng-click="filter_by_venue_type('wedding_celebrations')" class="btn">Wedding Celebrations</button>
               <button ng-click="filter_by_venue_type('business_functions')" class="btn">Business Functions</button>
               <button ng-click="filter_by_venue_type('party_and_dance')" class="btn">Party and Dance</button>
