@@ -81,8 +81,8 @@
             <div class="btn-group" ng-show="service.name == 'venues'">
               <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
             </div>
-            <hr>
-            <i class="fa fa-coffee"></i>&nbsp;&nbsp;
+            <hr ng-show="service.name == 'venues'">
+            <i class="fa fa-coffee" ng-show="service.name == 'venues'"></i>&nbsp;&nbsp;
             
             <div class="btn-group" ng-show="service.name == 'venues'">
             
