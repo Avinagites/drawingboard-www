@@ -82,7 +82,6 @@
               <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
             </div>
             <hr>
-            
             <i class="fa fa-coffee"></i>&nbsp;&nbsp;
             
             <div class="btn-group" ng-show="service.name == 'venues'">
@@ -105,23 +104,15 @@
                 </a></div>
                 <div class="span8">
                   <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i ng-show="service.name == 'venues'" class="fa fa-users"></i><span ng-show="service.name == 'venues'" class="service_venue_size">{{ provider.venue_size }}</span></h4>
-
-                  <p class="listing-desc-div">{{ provider.profile_description }}
-
-                  </p>
-
-
-
+                  <p class="listing-desc-div">{{ provider.profile_description }}</p>
                   <div class="row-fluid listing-desc-details">
-
-                    <div class="span6"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info <span ng-show="provider.reviews.length > 0" >({{ provider.reviews.length }} reviews)</span></a></div>
-
+                    <div class="span6">
+                      <a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info ({{ provider.reviews.length }} reviews)</a>
+                      <custom-rating value="provider.overall_rating" max="5" readOnly="true"></custom-rating>
+                    </div>
 
                     <div class="span6 listing-desc-details-right">
-
-
                       <a ng-show="requestsInCart[provider.id] == null" href ng-click="requestQuote(provider)" class="btn btn-warning" tooltip="A quote request email will be sent to this vendor" tooltip-placement="right">Request Quote</a>
-
                       <span ng-show="requestsInCart[provider.id] != null" href ng-click="unRequestQuote(provider)" class="btn btn-info">Quote Requested</span>
                     </div>
 
