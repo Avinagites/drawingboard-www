@@ -14,8 +14,15 @@
           <div class="span9">
             <div class="content-main">
 
+              <div ng-show="has_pending_event">
+                <h3>EVENT CREATION IN PROGRESS</h3>
+                <p>"{{ pending_event.name }}" at {{ pending_event.date | date:'MMMM dd, yyyy' }}</p>
+                <a class="btn btn-danger" href="/#/services/venues">Request more quotes</a>
+                <a class="btn btn-info" href="/#/dashboard.member.checkout/new">Finalise Quote Requests</a>
+              </div>
+
               <h3>MY UPCOMING EVENTS</h3>
-              <p ng-if="current_user.upcoming_events.length == 0">You haven't created any event yet. <a href="/#/event.new">Create a new event now!</a></p>
+              <p ng-if="current_user.upcoming_events.length == 0">You have not submitted any event yet. <a ng-show="!has_pending_event" href="/#/event.new">Create a new event now!</a></p>
               <table ng-if="current_user.upcoming_events.length > 0"
                      class="events table table-bordered table-condensed">
                 <tr>
@@ -37,8 +44,7 @@
                   <td>{{event.request_for_quotes.length}}</td>
                   <td>
                     <a target="_blank" ng-href="/#/event.show/{{ event.id }}">View</a>
-                    <a ng-show="event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">Edit</a>
-                    <a ng-show="!event.is_submitted" ng-href="/#/dashboard.member.checkout/{{ event.id }}">Submit</a>
+                    <a ng-href="/#/dashboard.member.checkout/{{ event.id }}">Edit</a>
                   </td>
                 </tr>
               </table>

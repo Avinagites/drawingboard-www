@@ -1,20 +1,20 @@
 <div class="main-container">
   <div class="">
     <div class="category-nav-div-top" >
+
       <div class="pull-left" ng-show="service_index != 0">
         <a href ng-click="goPrev()">Previous: {{prevCategory.display_name}}</a>
       </div>
-
       <div class="pull-right" ng-show="service_index != max_index">
         <a href ng-click="goNext()">Next: {{nextCategory.display_name}}</a>
       </div>
       <div class="pull-right right-checkout-1" ng-show="service_index != max_index">
-        <a href="/#/dashboard.member.checkout/">Finalise Quote Requests</a>
+        <a ng-show="authenticated" href="/#/dashboard.member.checkout/new">Finalise Quote Requests</a>
+        <a ng-show="!authenticated" href="/#/register.member">Finalise Quote Requests</a>
       </div>
-
-
       <div class="pull-right" ng-show="service_index == max_index">
-        <a href="/#/dashboard.member.checkout/">Finalise</a>
+        <a ng-show="authenticated" href="/#/dashboard.member.checkout/new">Finalise Quote Requests</a>
+        <a ng-show="!authenticated" href="/#/register.member">Finalise Quote Requests</a>
       </div>
     </div>
   </div>
@@ -134,35 +134,15 @@
           <hr>
           <div class="category-nav-div">
 
-            <!--<div class="pull-left">
-              Finish selecting {{service.display_name}}? <a href="/#/dashboard.member.checkout/">Finalise your list of quote requests here</a>
-            </div>-->
-
             <div class="pull-left">
-              <a href="/#/dashboard.member.checkout/">Finalise your list of quote requests</a>
+              <a href="/#/dashboard.member.checkout/new">Finalise your list of quote requests</a>
             </div>
 
             <div class="pull-right" ng-show="hasNextCategory">
               Continue on - <a ng-href="/#/services/{{nextCategory.name}}">{{nextCategory.display_name}}</a> category.
             </div>
-
-
           </div>
 
-
-          <!--              <hr>
-
-                        <div class="pagination pull-right">
-                          <ul>
-                            <li><a href="#">«</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">»</a></li>
-                          </ul>
-                        </div>-->
 
         </div>
       </div>

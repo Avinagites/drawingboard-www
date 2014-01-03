@@ -66,7 +66,7 @@
                     <h3>Quotes to be requested from:</h3>
                     <h5 class="text-red">Click on the category to add specific comment / request for the vendor(s).</h5>
                     <accordion close-others="true">
-                      <accordion-group ng-repeat="(key, value) in form_object.cart">
+                      <accordion-group ng-repeat="(key, value) in form_object.cart" is-open="true">
                         <accordion-heading>
                           {{ key }}  <span class="cart-count">({{ lengthOfHash(value) }})</span>
                         </accordion-heading>
