@@ -12,6 +12,8 @@ body {
 	margin-top: 0px;
 }
 
+
+
 .push-left{
 	float: left;
 }
@@ -455,6 +457,11 @@ form label {
 .fileupload-div .btn {
 	margin-right: 5px;
 }
+
+.featured_paid_div {
+	background-color: #fefcd3;
+}
+
 /* cart 
 --------------------------------------------------------------- */
 
@@ -494,7 +501,7 @@ form label {
 }
 
 .service_table_list.table th, .service_table_list.table td{
-	padding: 20px 0px;
+	padding: 20px 10px;
 }
 
 .service_table_list.table img{
@@ -547,6 +554,7 @@ form label {
 }
 .listing-div .thumbnail {
 	line-height: 0px;
+	background-color: #fff;
 }
 
 .category-nav-div-top {
