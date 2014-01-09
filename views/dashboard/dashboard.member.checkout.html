@@ -63,8 +63,10 @@
                       </div>
                     </div>
                     <hr> 
+                    
+                    <div class="box-highlight-1">
                     <h3>Quotes to be requested from:</h3>
-                    <h5 class="text-red">Click on the category to add specific comment / request for the vendor(s).</h5>
+                    <p class="">Click on the individual categories to include more detailed information in your quote requests. Remember to be as detailed as possible to ensure your selected vendors are able to provide you an accurate quote</p>
                     <accordion close-others="true">
                       <accordion-group ng-repeat="(key, value) in form_object.cart" is-open="true">
                         <accordion-heading>
@@ -79,6 +81,8 @@
                         </div>
                       </accordion-group>
                     </accordion>
+                    
+                    </div>
 
 
                     <hr>
@@ -125,7 +129,7 @@
                     <hr>
                     <div class="row-fluid control-group">
                       <div class="span5">
-                        <a href="/#/service_categories" class="btn">BACK to browsing vendors</a>
+                        <a href="/#/services/venues" class="btn">BACK to browsing vendors</a>
                       </div>
                       <div class="span7">
                         <label class="checkbox">

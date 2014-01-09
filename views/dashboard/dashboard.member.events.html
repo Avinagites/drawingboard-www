@@ -20,7 +20,7 @@
                 <a class="btn btn-danger" href="/#/services/venues">Request more quotes</a>
                 <a class="btn btn-info" href="/#/dashboard.member.checkout/new">Finalise Quote Requests</a>
               </div>
-
+<hr>
               <h3>MY UPCOMING EVENTS</h3>
               <p ng-if="current_user.upcoming_events.length == 0">You have not submitted any event yet. <a ng-show="!has_pending_event" href="/#/event.new">Create a new event now!</a></p>
               <table ng-if="current_user.upcoming_events.length > 0"
@@ -43,7 +43,7 @@
                   </td>
                   <td>{{event.request_for_quotes.length}}</td>
                   <td>
-                    <a target="_blank" ng-href="/#/event.show/{{ event.id }}">View</a>
+                    <a target="_blank" ng-href="/#/event.show/{{ event.id }}">View</a>&nbsp;|&nbsp;
                     <a ng-href="/#/dashboard.member.checkout/{{ event.id }}">Edit</a>
                   </td>
                 </tr>

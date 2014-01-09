@@ -5511,7 +5511,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 	margin-bottom: 20px;
 }
 .accordion-group {
-	margin-bottom: 2px;
+	margin-bottom: 6px;
 	border: 1px solid #e5e5e5;
 }
 .accordion-heading {
@@ -5520,6 +5520,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .accordion-heading .accordion-toggle {
 	display: block;
 	padding: 8px 15px;
+	background-color: white;
 }
 .accordion-toggle {
 	cursor: pointer;

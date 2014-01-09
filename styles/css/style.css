@@ -490,8 +490,26 @@ form label {
 	float: right;
 }
 
+/* box hightlight
+--------------------------------------------------------------------- */
+.box-highlight-1{
+	padding: 5px 10px;
+	background-color: #fffde7;
+}
+
 /* provider 
 --------------------------------------------------------------------- */
+
+.provider-single-div .addthis_toolbox {
+	padding-top: 10px;
+	width: 400px;
+	margin: 0px auto;
+}
+
+.provider-single-div .share-addthis{
+	display: block;
+}
+
 .service_table_list .title{
 	margin: 0px 0px 10px;
 }
@@ -567,6 +585,7 @@ form label {
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	top: 280px;
 	z-index: 9100;
+	height: 1px;
 }
 .category-nav-div-top a{
 	color: #fff;
