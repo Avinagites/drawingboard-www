@@ -605,6 +605,10 @@ form label {
 }
 
 
+.table-scroll{
+	width: 100%;
+	overflow: scroll;
+}
 
 
 /* pricing-table

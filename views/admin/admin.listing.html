@@ -5,6 +5,9 @@
             <div class="span12">
                 <div class="content-main">
                     <h3>Listing</h3>
+                    <p>** scroll to the right for more details</p>
+                    
+                   <div class="table-scroll"> 
                     <table class="admin-table table table-bordered table-condensed table-striped table-hover">
                         <tr>
                             <th>Vendor Name</th>
@@ -21,6 +24,12 @@
                         </tr>
                         <tr ng-repeat="provider in providers">
                             <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
+                            <td>
+                                <a ng-show="!provider.is_approved" href ng-click="approve(provider)">Approve</a>
+                                <a ng-show="provider.is_approved" href ng-click="disapprove(provider)">Disapprove</a>
+                                <span>|</span>
+                                <a ng-href="mailto:{{ provider.vendor.email }}">Email</a>
+                            </td>
                             <td><span>{{ provider.service.display_name }}</span></td>
                             <td>{{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</td>
                             <td>{{ provider.priceplan.name }}</td>
@@ -35,14 +44,10 @@
                                 ACRA: <strong>{{ provider.vendor.acra_no }}</strong><br>
                                 Mailing Address: <strong>{{ provider.vendor.mailing_address }}</strong></td>
                             <td>{{ provider.created_at | date:medium }}</td>
-                            <td>
-                                <a ng-show="!provider.is_approved" href ng-click="approve(provider)">Approve</a>
-                                <a ng-show="provider.is_approved" href ng-click="disapprove(provider)">Disapprove</a>
-                                <span>|</span>
-                                <a ng-href="mailto:{{ provider.vendor.email }}">Email</a>
-                            </td>
+                            
                         </tr>
                     </table>
+                    </div>
                     <hr>
                 </div>
 
