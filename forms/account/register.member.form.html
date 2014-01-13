@@ -6,7 +6,7 @@
         <label>Event nickname*</label>
       </div>
       <div class="span10">
-        <input type="text" ng-model="form_object.name" name="name" required
+        <input type="text" ng-model="form_object.name" name="name" ng-required="has_pending_event"
                id="inputEvent" placeholder="e.g. Jamie's 21st Birthday Party" class="input-medium span11">
       </div>
     </div>
@@ -16,7 +16,7 @@
         <label>Date*</label>
       </div>
       <div class="span4">
-        <input type="text" ng-model="form_object.date" name="date" required
+        <input type="text" ng-model="form_object.date" name="date" ng-required="has_pending_event"
                datepicker-popup="d/M/yyyy" show-weeks="false"
                min="date_for_tomorrow"
                id="inputDate" placeholder="MM/DD/YYYY" class="input-medium span10" >
@@ -27,13 +27,13 @@
       <div class="span4">
         <select ng-model="form_object.starts_at"
                 name="starts_at"
-                required
+                ng-required="has_pending_event"
                 class="span5"
                 ng-options="el for el in ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','9pm','10pm','11pm','12pm']"></select>
         -
         <select ng-model="form_object.ends_at"
                 name="ends_at"
-                required
+                ng-required="has_pending_event"
                 class="span5"
                 ng-options="el for el in ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','9pm','10pm','11pm','12pm']"></select>
       </div>
@@ -44,7 +44,7 @@
         <label>Number of Guest*</label>
       </div>
       <div class="span10">
-        <input type="number" ng-model="form_object.number_of_guests" name="number_of_guests" required
+        <input type="number" ng-model="form_object.number_of_guests" name="number_of_guests" ng-required="has_pending_event"
                id="inputGuest" placeholder="50" class="input-medium span11">
       </div>
     </div>
