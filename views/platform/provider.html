@@ -26,8 +26,8 @@
               <p>{{ provider.profile_description }}</p>
 
               <hr ng-hide="provider.priceplan.code == 'basic'">
-              <p ng-hide="provider.priceplan.code == 'basic'">{{ provider.website }}</p>
-              <p ng-hide="provider.priceplan.code == 'basic'">{{ provider.contact_number }}</p>
+              <p ng-hide="provider.priceplan.code == 'basic'">Website URL: {{ provider.website }}</p>
+              <p ng-hide="provider.priceplan.code == 'basic'">Contact Number:{{ provider.contact_number }}</p>
               <hr>
 
               <div class="row-fluid venue-images" ng-show="provider.priceplan.code == 'basic' || provider_pictures_pairs.length == 0">
