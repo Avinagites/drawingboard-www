@@ -135,7 +135,8 @@
           <div class="category-nav-div">
 
             <div class="pull-left">
-              <a href="/#/dashboard.member.checkout/new">Finalise your list of quote requests</a>
+              <a ng-show="authenticated" href="/#/dashboard.member.checkout/new">Finalise your list of quote requests</a>
+              <a ng-show="!authenticated" href="/#/register.member">Finalise your list of quote requests</a>
             </div>
 
             <div class="pull-right" ng-show="hasNextCategory">

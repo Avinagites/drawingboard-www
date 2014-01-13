@@ -19,11 +19,17 @@
   <div class="control-group">
     <label class="control-label" for="inputGuest">Time*</label>
     <div class="controls">
-      <input type="text" ng-model="form_object.starts_at" name="starts_at" required
-             id="inputFrom" placeholder="6pm" class="span2">
+      <select ng-model="form_object.starts_at"
+              name="starts_at"
+              required
+              class="span3"
+              ng-options="el for el in ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','9pm','10pm','11pm','12pm']"></select>
       -
-      <input type="text" ng-model="form_object.ends_at" name="ends_at" required
-             id="inputUntil" placeholder="8pm" class="span2">
+      <select ng-model="form_object.ends_at"
+              name="ends_at"
+              required
+              class="span3"
+              ng-options="el for el in ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm','9pm','10pm','11pm','12pm']"></select>
     </div>
   </div>
 

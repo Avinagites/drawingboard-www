@@ -1,8 +1,8 @@
 <form class="form-horizontal" novalidate ng-submit="submitForm()" name="form">
-  <div class="control-group" ng-class="{error: hasError(form.name)}">
-    <label class="control-label" for="inputVendor">Vendor Name</label>
+  <div class="control-group" ng-class="{error: hasError(form.business_name)}">
+    <label class="control-label" for="inputVendor">Business Name</label>
     <div class="controls">
-      <input type="text" ng-model="form_object.name" name="name" id="inputVendor" placeholder="Name" required>
+      <input type="text" ng-model="form_object.name" name="business_name" id="inputVendor" placeholder="Name" required>
     </div>
   </div>
   <div class="control-group">
@@ -16,7 +16,7 @@
   </div>
 
   <div class="control-group" ng-show="selected_service.name == 'venues'">
-    <label class="control-label" for="inputService">Venue Size</label>
+    <label class="control-label" for="inputService">How many person can your place fit?</label>
     <div class="controls">
       <select ng-model="form_object.venue_size"
               name="venue_size"
@@ -37,13 +37,27 @@
     </div>
   </div>
 
-  <div class="row-fluid control-group"  ng-class="{error: hasError(form.profile_description)}">
+  <div class="row-fluid control-group"  ng-class="{error: hasError(form.business_introduction)}">
     <div class="span12">
-      <label>Description to appear on profile page</label>
-      <textarea ng-model="form_object.profile_description" name="profile_description" rows="3" class="span12"></textarea>
+      <label>Business Introduction</label>
+      <textarea ng-model="form_object.profile_description" name="business_introduction" rows="3" class="span12"></textarea>
     </div>
   </div>
-  
+
+  <div class="row-fluid control-group"  ng-class="{error: hasError(form.business_website)}">
+    <div class="span12">
+      <label>Business Website</label>
+      <input type="text" ng-model="form_object.website" name="business_website" class="span12" placeholder="http://www.yourbusinesswebsite.com" />
+    </div>
+  </div>
+
+  <div class="row-fluid control-group"  ng-class="{error: hasError(form.business_contact_number)}">
+    <div class="span12">
+      <label>Business Contact Number</label>
+      <input type="text" ng-model="form_object.contact_number" name="business_contact_number" class="span12" placeholder="+6591001234" />
+    </div>
+  </div>
+
   <hr>
   
   <h4>Upload Pictures</h4>
@@ -63,7 +77,7 @@
   </div>
 
   <div class="control-group">
-    <span ng-hide="pricingplan == 'basic'">You can only upload up to maximum 4 pictures.</span>
+    <span ng-hide="pricingplan == 'basic'">You can only upload up to 4 photos</span>
     
     <span ng-show="pricingplan == 'basic'">You are unable to upload picture with a basic plan. <a href="/#/account.pricing">Upgrade to premium!</a></span>
     
@@ -130,11 +144,11 @@
     
     
     	
-      <label>Business Address*</label>
+      <label>Business Address</label>
       <textarea
               ng-model="form_object.map_address" rows="3" class="span12" name="map_address"
               placeholder="Click 'Set the above as Business Address' or paste your own business address here"
-              required></textarea>
+              ></textarea>
     </div>
   </div>
   
