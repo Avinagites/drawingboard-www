@@ -94,11 +94,11 @@
           <label>Confirm Email*</label>
         </div>
         <div class="span4">
-          <input type="email" class="input-medium span10" match="user.email" ng-model="confirm_email" name="email_confirmation"  ng-required="submission_type == 'register'">
+          <input type="email" class="input-medium span10" matcher comparewith="user.email" matched="email_matched" ng-model="confirm_email" name="email_confirmation"  ng-required="submission_type == 'register'">
         </div>
       </div>
 
-      <div class="row-fluid control-group" ng-show="form.email_confirmation.$error.match">
+      <div class="row-fluid control-group" ng-hide="email_matched">
         <div class="span12">
           <span class="msg-error">Email and Confirm Email must match.</span>
         </div>
@@ -118,11 +118,11 @@
         </div>
         <div class="span4">
           <input type="password" class="input-medium span10" name="password_confirmation"
-                 ng-model="confirm_password" match="user.password"  ng-required="submission_type == 'register'">
+                 ng-model="confirm_password" matcher comparewith="user.password" matched="password_matched"  ng-required="submission_type == 'register'">
         </div>
       </div>
 
-      <div class="row-fluid control-group" ng-show="form.password_confirmation.$error.match">
+      <div class="row-fluid control-group" ng-hide="password_matched">
         <div class="span12">
           <span class="msg-error">Password do not match</span>
         </div>

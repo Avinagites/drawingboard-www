@@ -134,12 +134,20 @@
 
   <hr>
 
+  <div class="row-fluid">
+    <div class="span11 offset1">
+      <strong>Please note, your listing may take up to 48 hours to be activated. </strong>
+    </div>
+  </div>
+
   <div class="vendor-form-list row-fluid control-group" ng-class="{error: hasError(form.terms_and_conditions)}">
     <div class="controls">
 
       <label class="checkbox" ng-class="{error: hasError(form.terms_and_conditions)}">
         <input type="checkbox" required ng-model="terms_and_conditions" name="terms_and_conditions">&nbsp;I have read the <a href="/#/terms">Terms and Conditions</a>
       </label>
+
+
 
       <button type="submit" class="btn btn-warning span6">Submit</button>
 
