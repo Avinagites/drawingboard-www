@@ -462,6 +462,15 @@ form label {
 	background-color: #fefcd3;
 }
 
+.provider-review{
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: 8px;
+}
+
+.provider-review .report-btn{
+	margin-right: 10px;
+}
+
 /* cart 
 --------------------------------------------------------------- */
 
