@@ -34,7 +34,10 @@
 <div class="row-fluid control-group" ng-class="{error: hasError(form.business_introduction)}">
   <div class="span12">
     <label>Business Introduction</label>
-    <textarea ng-model="user.provider.profile_description" name="business_introduction" rows="3" class="span12"></textarea>
+    <div ng-hide="ckEditorLoaded">Loading Text Editor...</div>
+    <div ng-show="ckEditorLoaded">
+      <textarea ckeditor="editorOptions" ng-model="user.provider.profile_description" name="business_introduction" rows="3" class="span12"></textarea>
+    </div>
   </div>
 </div>
 

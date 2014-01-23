@@ -42,7 +42,21 @@
                 <label>Message</label>
               </div>
               <div class="controls">
-                <textarea ng-model="contact.message" name="subject" required></textarea>
+                <textarea ng-model="contact.message" name="message" required></textarea>
+              </div>
+            </div>
+
+            <div class="row-fluid control-group">
+              <div class="control-label">
+                <label></label>
+              </div>
+              <div class="controls">
+                <div
+                    vc-recaptcha
+                    tabindex="3"
+                    theme="blackglass"
+                    key="6LcFd-0SAAAAAFBJsqVjeuUUQC8JBY0KP62oFqQ2"
+                    ></div>
               </div>
             </div>
             
