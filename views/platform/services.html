@@ -85,10 +85,12 @@
             <i class="fa fa-coffee" ng-show="service.name == 'venues'"></i>&nbsp;&nbsp;
             
             <div class="btn-group" ng-show="service.name == 'venues'">
-            
-              <button ng-click="filter_by_venue_type('wedding_celebrations')" class="btn">Wedding Celebrations</button>
-              <button ng-click="filter_by_venue_type('business_functions')" class="btn">Business Functions</button>
-              <button ng-click="filter_by_venue_type('party_and_dance')" class="btn">Party and Dance</button>
+              <button ng-click="filter_by_venue_type('wedding_celebrations')" class="btn">Weddings</button>
+              <button ng-click="filter_by_venue_type('business_functions')" class="btn">Corporate Events</button>
+              <button ng-click="filter_by_venue_type('party_and_dance')" class="btn">Parties</button>
+              <button ng-click="filter_by_venue_type('dinner_and_dance')" class="btn">Dinner and Dance</button>
+              <button ng-click="filter_by_venue_type('kids')" class="btn">Kids</button>
+              <button ng-click="filter_by_venue_type('others')" class="btn">Others</button>
             </div>
           </div>
           <br>

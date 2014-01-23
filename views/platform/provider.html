@@ -1,4 +1,24 @@
 <div class="main-container">
+
+  <div class="">
+    <div class="category-nav-div-top" >
+
+      <div class="pull-left" ng-show="service_index != 0">
+        <a href ng-click="goPrev()">Previous: {{prevCategory.display_name}}</a>
+      </div>
+      <div class="pull-right" ng-show="service_index != max_index">
+        <a href ng-click="goNext()">Next: {{nextCategory.display_name}}</a>
+      </div>
+      <div class="pull-right right-checkout-1" ng-show="service_index != max_index">
+        <a ng-show="authenticated" href="/#/dashboard.member.checkout/new">Finalise Quote Requests</a>
+        <a ng-show="!authenticated" href="/#/register.member">Finalise Quote Requests</a>
+      </div>
+      <div class="pull-right" ng-show="service_index == max_index">
+        <a ng-show="authenticated" href="/#/dashboard.member.checkout/new">Finalise Quote Requests</a>
+        <a ng-show="!authenticated" href="/#/register.member">Finalise Quote Requests</a>
+      </div>
+    </div>
+  </div>
     
   <div id="main-content" class="container">
     <div class="row-fluid">

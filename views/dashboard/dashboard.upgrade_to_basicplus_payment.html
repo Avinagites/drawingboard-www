@@ -1,0 +1,27 @@
+<div class="main-container">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8 offset2 box_con">
+        <div class=" text-center">
+          <h2 class="box_title">Finalise Quote Requests</h2>
+          <h4>You have selected the <a class="orange1" href="">Premium</a> plan</h4>
+          <h4 ng-if="discount > 0">Total: <span class="text-slash">${{base_price}}</span> <span class="orange1">${{newPrice}}</span></h4>
+          <h4 ng-if="discount == 0">Total: <span class="orange1">${{base_price}}</span></h4>
+
+          <div class="">
+            <div class="">Coupon code</div>
+
+            <input ng-model="discount_code" type="text" class="span3" style="margin: 0px!important;">
+            <btn ng-click="changeTrigger()" class="btn btn-warning">Use</btn>
+          </div>
+
+          <p ng-show="discount > 0">You have been entitled to {{ discount }}% discount for this plan</p>
+          <div class="clearfix"></div>
+          <hr>
+          <a href ng-click="pay()" class="paypal-btn btn button-paypal">Checkout using <img src="styles/img/paypal-button.png"></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

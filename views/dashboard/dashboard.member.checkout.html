@@ -72,7 +72,8 @@
                         <accordion-heading>
                           {{ key }}  <span class="cart-count">({{ lengthOfHash(value) }})</span>
                         </accordion-heading>
-                        <div class="cart-item-div" ng-repeat="(id, provider_name) in value">{{ provider_name }}
+                        <div class="cart-item-div" ng-repeat="(id, provider_name) in value">
+                          <a target="_blank" ng-href="/#/provider/{{ id }}">{{ provider_name }}</a>
                           <a ng-click="remove(key, id)" class="a-remove">Remove</a>
                         </div>
                         <div class="cart-item-div">
