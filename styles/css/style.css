@@ -415,7 +415,7 @@ form label {
 }
 #footer-content .directory ul li {
 	line-height: 23px;
-	float: left;
+	display: inline-block;
 	margin-right: 20px;
 	
 }
@@ -460,6 +460,10 @@ form label {
 
 .featured_paid_div {
 	background-color: #fefcd3;
+}
+
+.featured_paid_div .thumbnail{
+	overflow: auto!important;
 }
 
 .provider-review{
@@ -891,20 +895,22 @@ sub, sup {
 	display: none;
 }
 @media(max-width: 980px){
-	.category-nav-div-top{
-		display: none;
-	}
+
+.category-nav-div-top{
+
+	opacity:0.8;
+	filter:alpha(opacity=80); /* For IE8 and earlier */
+	top: 100px;
+}
+
+
 	#footer *{
-		float: none !important;
 	}
 	#footer .span3, #footer .span6, #footer .span4, #footer .span2{
-		width: 100%;
 	}
 	#footer-content {
-		text-indent: 40px;
 	}
 	#footer-content .span2 > img:nth-child(2) {
-		margin-left: 40px !important;
 	}
 	li.title {
 		font-size: 13px !important;
@@ -938,10 +944,20 @@ sub, sup {
 }
 @media(max-width: 767px){
 	
+	
+	
 	.welcome-event-box{
 		background-color: #fafafa;
 		padding: 10px 20px;
 		margin: 0px 10px;
+	}
+	
+	.featured_paid_div .thumbnail img{
+		max-width: 100%!important;
+	}
+	
+	.service_table_list.table img {
+		
 	}
 	
 	.nav.nav-pills{
@@ -1037,4 +1053,9 @@ sub, sup {
 		text-align: center !important;
 		width: 100% !important;
 	}
+	.footer-social-div{
+		width: 100%;
+	}
+	
+
 }
