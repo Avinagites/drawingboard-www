@@ -44,7 +44,7 @@
             <p class="span6"><custom-rating value="provider.overall_rating" max="5" readOnly="true"></custom-rating></p>
             <p class="text-right span6"><a href ng-click="goToReviews()">({{ reviews.length }}) Reviews</a></p>
           </div>
-          <p>{{ provider.profile_description }}</p>
+          <p ng-bind-html-unsafe="provider.profile_description"></p>
 
           <hr ng-hide="provider.priceplan.code == 'basic'">
           <p ng-hide="provider.priceplan.code == 'basic'"><b>Website URL:</b> {{ provider.website }}</p>
