@@ -27,7 +27,7 @@
               <th>Price plan</th>
               <th>Payment Status</th>
               <th>Expiry</th>
-              <th class="span3">Details</th>
+              <th>Details</th>
             </tr>
             <tr ng-repeat="provider in current_user.providers | orderBy:updated_at">
               <td>
@@ -49,10 +49,17 @@
               </td>
               <td ng-switch on="paymentStatus(provider)">
                 <span ng-switch-when="Paid">
-                      Paid
+                      <span>Paid</span>
+                      <hr>
+                      <span ng-show="provider.is_approved">Approved</span>
+                      <span ng-show="!provider.is_approved">Pending Approval</span>
+
                     </span>
                 <span ng-switch-when="Free plan">
-                      Free plan
+                      <span>Free plan</span>
+                      <hr>
+                      <span ng-show="provider.is_approved">Approved</span>
+                      <span ng-show="!provider.is_approved">Pending Approval</span>
                     </span>
                 <span ng-switch-when="Not paid">
                       <a href="/#/dashboard.payment/{{ provider.id }}">Pay</a>
@@ -64,7 +71,13 @@
                       <a href="/#/dashboard.payment/{{ provider.id }}">Pay</a>
                     </span>
               </td>
-              <td>{{ provider.expiry | date:medium }}</td>
+              <td>
+                <span>{{ provider.expiry | date:medium }}</span>
+                <div ng-show="provider.expiry">
+                  <hr ng-hide="provider.priceplan.code == 'basic'">
+                  <a ng-hide="provider.priceplan.code == 'basic'" ng-href="/#/dashboard.extend_plan_payment/{{ provider.id }}"><small>Extend plan</small></a>
+                </div>
+              </td>
               <td><a ng-href="/#/listing.edit/{{ provider.id }}">Edit</a>
               </td>
             </tr>
