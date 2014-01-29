@@ -109,7 +109,7 @@
                   <p class="listing-desc-div" ng-bind-html-unsafe="provider.profile_description"></p>
                   <div class="row-fluid listing-desc-details">
                     <div class="span6">
-                      <a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info ({{ provider.reviews.length }} reviews)</a>
+                      <a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info ({{ provider.approved_reviews_count }} reviews)</a>
                       <custom-rating value="provider.overall_rating" max="5" readOnly="true"></custom-rating>
                     </div>
 
