@@ -75,7 +75,7 @@
             <div class="btn-group">
               <button ng-click="services_sort_by('created_at DESC')" class="btn">Recently Added</button>
               <button ng-click="services_sort_by('overall_rating DESC')" class="btn">Rating</button>
-              <button ng-click="services_sort_by('name DESC')" class="btn">Alphabetical</button>
+              <button ng-click="services_sort_by('name ASC')" class="btn">Alphabetical</button>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;<i ng-show="service.name == 'venues'" class="fa fa-users"></i>&nbsp;&nbsp;
             <div class="btn-group" ng-show="service.name == 'venues'">

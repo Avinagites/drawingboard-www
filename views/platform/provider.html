@@ -46,9 +46,9 @@
           </div>
           <p ng-bind-html-unsafe="provider.profile_description"></p>
 
-          <hr ng-hide="provider.priceplan.code == 'basic'">
-          <p ng-hide="provider.priceplan.code == 'basic'"><b>Website URL:</b> {{ provider.website }}</p>
-          <p ng-hide="provider.priceplan.code == 'basic'"><b>Contact Number:</b> {{ provider.contact_number }}</p>
+          <hr>
+          <p><b>Website URL:</b> {{ provider.website }}</p>
+          <p><b>Contact Number:</b> {{ provider.contact_number }}</p>
           <hr>
 
           <div class="row-fluid venue-images" ng-show="provider.priceplan.code == 'basic' || provider_pictures_pairs.length == 0">
