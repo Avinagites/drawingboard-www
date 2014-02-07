@@ -316,7 +316,7 @@ float: none;
 	width: 100%;
 }
 .venue-images .thumbnails > li {
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 }
 .venue-images .nailthumb-container img{
 	max-width: none;
@@ -462,8 +462,21 @@ form label {
 	background-color: #fefcd3;
 }
 
+.provider-thumbnails{
+	margin-bottom: 0px;
+}
+
 .featured_paid_div .thumbnail{
 	overflow: auto!important;
+	
+}
+
+.provider-thumbnails .thumbnail{
+	overflow: hidden;
+}
+
+.provider-thumbnails .nailthumb-container{
+	margin: 0px auto;
 }
 
 .provider-review{
@@ -895,7 +908,7 @@ sub, sup {
 	display: none;
 }
 
-#sidebar-nav a#pull {  
+#pull {  
     display: none;  
 }  
 
