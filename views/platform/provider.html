@@ -108,9 +108,7 @@
 
           <div id="listing-reviews" ng-show="provider.priceplan.code != 'basic'">
             <div class="row-fluid">
-              <h4 class="span12">{{ reviews.length }} / {{ total_review_results }} reviews from our community</h4>
-
-
+              <h4 class="span12">{{ provider.approved_reviews_count }} / {{ all_reviews_count }} reviews from our community</h4>
             </div>
           </div>
 
@@ -166,7 +164,7 @@
           <div ng-if="reviews.length > 0">
    
             <div class="pull-right" pagination
-                 total-items="all_reviews_count"
+                 total-items="total_review_results"
                  page="reviews_query.page"
                  items-per-page="reviews_query.per_page"
                  max-size="9"></div>
