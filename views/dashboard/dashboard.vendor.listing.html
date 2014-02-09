@@ -29,7 +29,7 @@
               <th>Expiry</th>
               <th>Details</th>
             </tr>
-            <tr ng-repeat="provider in current_user.providers | orderBy:updated_at">
+            <tr ng-repeat="provider in current_user.providers | orderBy:created_at">
               <td>
                 <a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a>
               </td>
@@ -37,18 +37,25 @@
                 <span>{{ provider.service.display_name }}</span>
               </td>
               <td>
-                <span><strong>{{ provider.priceplan.name }}</strong></span>
+                <span ng-hide="provider.free_trial_mode"><strong>{{ provider.priceplan.name }}</strong></span>
+                <span ng-show="provider.free_trial_mode"><strong>Premium Plan Free Trial</strong></span>
                 <div ng-show="paymentStatus(provider) == 'Free plan' && provider.priceplan.code == 'basic'">
                   <hr>
                   <a ng-href="/#/dashboard.upgrade_to_basicplus_payment/{{ provider.id }}"><small>Upgrade to Basic Plus</small></a>
                 </div>
-                <div ng-show="paymentStatus(provider) == 'Paid' && provider.priceplan.code == 'basicplus' || provider.priceplan.code == 'basic'">
+                <div ng-show="provider.free_trial_mode || (paymentStatus(provider) == 'Paid' && provider.priceplan.code == 'basicplus' || provider.priceplan.code == 'basic')">
                   <hr>
                   <a ng-href="/#/dashboard.upgrade_to_premium_payment/{{ provider.id }}"><small>Upgrade to Premium</small></a>
                 </div>
+
+                <div ng-show="provider.is_approved && (!current_user.free_trial_tried && (paymentStatus(provider) == 'Paid' && provider.priceplan.code == 'basicplus' || provider.priceplan.code == 'basic'))">
+                  <hr>
+                  <a href ng-click="activate_free_trial(provider)"><small>Try Premium for 21 days</small></a>
+                </div>
               </td>
               <td ng-switch on="paymentStatus(provider)">
-                <span ng-switch-when="Paid">
+                <div ng-hide="provider.free_trial_mode">
+                  <span ng-switch-when="Paid">
                       <span>Paid</span>
                       <hr>
                       <span ng-show="provider.is_approved">Approved</span>
@@ -70,6 +77,7 @@
                 <span ng-switch-when="Payment failed">
                       <a href="/#/dashboard.payment/{{ provider.id }}">Pay</a>
                     </span>
+                </div>
               </td>
               <td>
                 <span>{{ provider.expiry | date:medium }}</span>
