@@ -7,12 +7,24 @@
           <input ng-model="form_object.title" name="review_title" type="text" required/>
         </div>
         <div class="control-group">
-          <label>Rate</label>
-          <custom-rating value="form_object.rating" max="5" readonly="false" required></custom-rating>
+          <label>Customer Service</label>
+          <custom-rating value="form_object.rating_customer_service" max="5" readonly="false" required></custom-rating>
+        </div>
+        <div class="control-group">
+          <label>Value for Money</label>
+          <custom-rating value="form_object.rating_value_for_money" max="5" readonly="false" required></custom-rating>
+        </div>
+        <div class="control-group">
+          <label>Communication</label>
+          <custom-rating value="form_object.rating_communication" max="5" readonly="false" required></custom-rating>
+        </div>
+        <div class="control-group">
+          <label>Quality of Service or Product Provided</label>
+          <custom-rating value="form_object.rating_quality_of_service_or_product_provided" max="5" readonly="false" required></custom-rating>
         </div>
         <div class="control-group">
           <label>Your Review</label>
-          <textarea ng-model="form_object.content" name="review_content" required></textarea>
+          <textarea rows="5" ng-model="form_object.content" name="review_content" required class="span10"></textarea>
         </div>
         <button type="submit" class="btn btn-long btn-info">Submit</button>
         <a ng-click="closeForm()" class="btn btn-long btn-danger">Cancel</a>

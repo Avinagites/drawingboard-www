@@ -147,14 +147,32 @@
 
               <div class="row-fluid">
                 <div class="span9">
-                  <p class="text-grey p-small"><span>{{ review.reviewer.first_name }}</span>, {{ review.reviewer.reviews.length }} reviews made</p>
-                </div>
-                <div class="span3">
-                  <div class="pull-right">
-                    <custom-rating value="review.rating" max="5" readOnly="true"></custom-rating>
+                  <div>
+                    <custom-rating value="review.rating_customer_service" max="5" readOnly="true"></custom-rating>
+                    &nbsp;
+                    <span class="text-grey p-small">Customer Service</span>
+                  </div>
+                  <div>
+                    <custom-rating value="review.rating_value_for_money" max="5" readOnly="true"></custom-rating>
+                    &nbsp;
+                    <span class="text-grey p-small">Value for Money</span>
+                  </div>
+                  <div>
+                    <custom-rating value="review.rating_communication" max="5" readOnly="true"></custom-rating>
+                    &nbsp;
+                    <span class="text-grey p-small">Communication</span>
+                  </div>
+                  <div>
+                    <custom-rating value="review.rating_quality_of_service_or_product_provided" max="5" readOnly="true"></custom-rating>
+                    &nbsp;
+                    <span class="text-grey p-small">Quality of Service or Product Provided</span>
                   </div>
                 </div>
+                <div class="span3 pull-right">
+                  <p class="text-grey p-small"><span>{{ review.reviewer.first_name }}</span>, {{ review.reviewer.reviews.length }} reviews made</p>
+                </div>
               </div>
+
               <p>{{ review.content }}</p>
 
               
