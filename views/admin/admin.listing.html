@@ -1,57 +1,55 @@
 <div class="main-container">
-    <div id="main-content" class="container">
-        <div class="row-fluid">
+  <div id="main-content" class="container">
+    <div class="row-fluid">
 
-            <div class="span12">
-                <div class="content-main">
-                    <h3>Listing</h3>
-                    <p>** scroll to the right for more details</p>
-                    
-                   <div class="table-scroll"> 
-                    <table class="admin-table table table-bordered table-condensed table-striped table-hover">
-                        <tr>
-                            <th>Vendor Name</th>
-                            <th>Type of services</th>
-                            <th>Name</th>
-                            <th>Price Plan</th>
-                            <th>Approved?</th>
-                            <th>Payment Status</th>
-                            <th>Expiry</th>
-                            <th>Num of Reviews</th>
-                            <th>Vendor Details</th>
-                            <th>Created At</th>
-                            <th>Actions</th>
-                        </tr>
-                        <tr ng-repeat="provider in providers">
-                            <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
-                            <td>
-                                <a ng-show="!provider.is_approved" href ng-click="approve(provider)">Approve</a>
-                                <a ng-show="provider.is_approved" href ng-click="disapprove(provider)">Disapprove</a>
-                                <span>|</span>
-                                <a ng-href="mailto:{{ provider.vendor.email }}">Email</a>
-                            </td>
-                            <td><span>{{ provider.service.display_name }}</span></td>
-                            <td>{{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</td>
-                            <td>{{ provider.priceplan.name }}</td>
-                            <td>{{ provider.is_approved }}</td>
-                            <td ng-if="provider.priceplan.code == 'basic'">Free</td>
-                            <td ng-if="provider.priceplan.code != 'basic'">{{ provider.last_payment.status }}</td>
-                            <td>{{ provider.expiry | date:medium }}</td>
-                            <td>{{ provider.reviews.length }}</td>
-                            <td>
-                                <strong>{{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</strong><br>
-                                <strong>{{ provider.vendor.email }}</strong><br>
-                                <!--ACRA: <strong>{{ provider.vendor.acra_no }}</strong><br>-->
-                                Mailing Address: <strong>{{ provider.vendor.mailing_address }}</strong></td>
-                            <td>{{ provider.created_at | date:medium }}</td>
-                            
-                        </tr>
-                    </table>
-                    </div>
-                    <hr>
-                </div>
+      <div class="span12">
+        <div class="content-main">
+          <h3>Listing</h3>
+          <p>** scroll to the right for more details</p>
 
-            </div>
+          <div class="table-scroll">
+            <table class="admin-table table table-bordered table-condensed table-striped table-hover">
+              <tr>
+                <th>Vendor Name</th>
+                <th>Actions</th>
+                <th>Type of services</th>
+                <th>Price Plan</th>
+                <th>Approved?</th>
+                <th>Payment Status</th>
+                <th>Expiry</th>
+                <th>Views</th>
+                <th>Num of Reviews</th>
+                <th>Vendor Details</th>
+                <th>Created At</th>
+              </tr>
+              <tr ng-repeat="provider in providers">
+                <td><a href="/#/provider/{{ provider.id }}">{{ provider.name }}</a></td>
+                <td>
+                  <a ng-show="!provider.is_approved" href ng-click="approve(provider)">Approve</a>
+                  <a ng-show="provider.is_approved" href ng-click="disapprove(provider)">Disapprove</a>
+                  <hr>
+                  <a ng-href="/#/admin.provider_switch_vendor/{{ provider.id }}">Switch Vendor</a>
+                  <hr>
+                  <a ng-href="mailto:{{ provider.vendor.email }}">Email</a>
+                </td>
+                <td><span>{{ provider.service.display_name }}</span></td>
+                <td>{{ provider.priceplan.name }}</td>
+                <td>{{ provider.is_approved }}</td>
+                <td ng-if="provider.priceplan.code == 'basic'">Free</td>
+                <td ng-if="provider.priceplan.code != 'basic'">{{ provider.last_payment.status }}</td>
+                <td>{{ provider.expiry | date:medium }}</td>
+                <td>{{ provider.views }}</td>
+                <td>{{ provider.approved_reviews_count }}</td>
+                <td><a ng-href="/#/admin.vendor.show/{{ provider.vendor_id }}">View Details</a></td>
+                <td>{{ provider.created_at | date:medium }}</td>
+
+              </tr>
+            </table>
+          </div>
+          <hr>
         </div>
+
+      </div>
     </div>
+  </div>
 </div>

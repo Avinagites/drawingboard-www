@@ -1,0 +1,61 @@
+<div class="main-container">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8 offset2 box_con">
+        <div>
+          <h2 class="box_title">Switch Vendor for "{{ provider.name }}"</h2>
+
+          <form class="form-horizontal" novalidate ng-submit="submitForm()" name="form">
+            <div class="control-group" ng-class="{error: hasError(form.selected_vendor)}">
+              <label class="control-label">Selected Vendor</label>
+
+              <div class="controls">
+                <select ng-options="v as v.email for v in vendors" ng-model="form_object.selected_vendor" name="selected_vendor" required></select>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8 offset2 box_con">
+        <div>
+          <h3>Current Vendor</h3>
+          <div>Name: {{ provider.vendor.first_name }} {{ provider.vendor.last_name }}</div>
+          <div>Email: <a ng-href="mailto:{{ provider.vendor.email }}">{{ provider.vendor.email }}</a></div>
+          <div>Phone: {{ provider.vendor.phone }}</div>
+          <div>Mobile: {{ provider.vendor.mobile }}</div>
+          <div>Created at: {{ provider.vendor.created_at }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container" ng-show="form_object.selected_vendor">
+    <div class="row-fluid">
+      <div class="span8 offset2 box_con">
+        <div>
+          <h3>New Vendor</h3>
+          <div>Name: {{ form_object.selected_vendor.first_name }} {{ form_object.selected_vendor.last_name }}</div>
+          <div>Email: <a ng-href="mailto:{{ form_object.selected_vendor.email }}">{{ form_object.selected_vendor.email }}</a></div>
+          <div>Phone: {{ form_object.selected_vendor.phone }}</div>
+          <div>Mobile: {{ form_object.selected_vendor.mobile }}</div>
+          <div>Created at: {{ form_object.selected_vendor.created_at }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
