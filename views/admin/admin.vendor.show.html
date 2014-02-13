@@ -25,7 +25,14 @@
 
                         <tr>
                             <td>Email*</td>
-                            <td><a ng-href="mailto:{{ vendor.email }}">{{ vendor.email }}</a></td>
+                            <td><a ng-href="mailto:{{ vendor.email }}">{{ vendor.email }}</a>
+                              <hr>
+                              <div class="control-group">
+                                <label class="control-label"><input type="email" ng-model="form_object.change_email_to"/></label>
+                                <a href class="btn btn-danger" ng-click="changeVendorEmail()">Change Email</a>
+                              </div>
+
+                              </td>
                         </tr>
 
                         <tr>
