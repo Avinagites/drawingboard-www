@@ -101,9 +101,10 @@
             <tr ng-repeat="provider in providers">
               <td ng-class="{featured_paid_div: isPremiumListing(provider)}">
                 <div ng-show="provider.provider_pictures.length == 0">
-                  <div class="span12">
+                  <div class="span4 thumbnails"></div>
+                  <div class="span8">
                     <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i ng-show="service.name == 'venues'" class="fa fa-users"></i><span ng-show="service.name == 'venues'" class="service_venue_size">{{ provider.venue_size }}</span></h4>
-                    <p class="listing-desc-div" ng-bind-html-unsafe="provider.profile_description"></p>
+                    <p class="listing-desc-div" ng-bind-html-unsafe="provider.profile_description | splitter:0"></p>
                     <div class="row-fluid listing-desc-details">
                       <div class="span6">
                         <a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info ({{ provider.approved_reviews_count }} reviews)</a>
@@ -125,7 +126,7 @@
                   </a></div>
                   <div class="span8">
                     <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i ng-show="service.name == 'venues'" class="fa fa-users"></i><span ng-show="service.name == 'venues'" class="service_venue_size">{{ provider.venue_size }}</span></h4>
-                    <p class="listing-desc-div" ng-bind-html-unsafe="provider.profile_description"></p>
+                    <p class="listing-desc-div" ng-bind-html-unsafe="provider.profile_description | splitter:0"></p>
                     <div class="row-fluid listing-desc-details">
                       <div class="span6">
                         <a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">more info ({{ provider.approved_reviews_count }} reviews)</a>
