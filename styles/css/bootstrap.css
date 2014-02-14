@@ -3830,8 +3830,8 @@ button.close {
 }
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
 	color: #333333;
-	background-color: #e6e6e6;
- *background-color: #d9d9d9;
+	background-color: #dddddd;	
+ *background-color: #dddddd;
 }
 .btn:active, .btn.active {
 	background-color: #cccccc \9;
