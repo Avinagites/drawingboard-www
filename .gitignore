@@ -1,4 +1,6 @@
 *.esproj
 .DS_Store
 **/.DS_Store
+blog
+blog/*
 .idea
