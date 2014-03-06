@@ -1,10 +1,8 @@
 <div class="span3 sidebar">
-<a href id="pull">Menu</a>
-<ul class="nav nav-list l_tinynav1" id="sidebar-nav">
+  <a href id="pull">Menu</a>
+  <ul class="nav nav-list l_tinynav1" id="sidebar-nav">
     <li class="nav-header">
-     <a href="" ng-click="open()">Categories</a>
-    
-    
+      <a href="" ng-click="open()">Categories</a>
     </li>
     <li ui-route ng-href="/#/services/{{service.name}}" ng-class="{active: $uiRoute}" ng-repeat="service in services">
       <a  ng-href="/#/services/{{service.name}}" >{{ service.display_name }}</a>
@@ -13,13 +11,13 @@
   <div class="clearfix"></div>
 
   <!--<button class="btn btn-large btn-primary" type="button">REVIEW & SUBMIT</button>-->
-  
-<!--<h3>How to get started?</h3> --> 
+
+  <!--<h3>How to get started?</h3> -->
   <!--<select id="tinynav1" class="tinynav tinynav1">
   		<option ng-repeat="service in services" ng-click="goTo(service.name)">{{ service.display_name }}
   		</li>
-	  </option>	
+	  </option>
   </select>-->
   <hr>
-    
+
 </div>
