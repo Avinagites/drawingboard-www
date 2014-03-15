@@ -73,24 +73,33 @@
           <div class="text-center">
             <i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;
             <div class="btn-group">
-              <button ng-click="services_sort_by('created_at DESC')" class="btn">Recently Added</button>
-              <button ng-click="services_sort_by('overall_rating DESC')" class="btn">Rating</button>
-              <button ng-click="services_sort_by('name ASC')" class="btn">Alphabetical</button>
+              <button id="services_sort_by_created_at"
+                      ng-click="services_sort_by('created_at DESC');toggle_button_active('services_sort_by_created_at', 'services_sort_by_btn')"
+                      class="btn services_sort_by_btn">Recently Added</button>
+              <button id="services_sort_by_overall_rating"
+                      ng-click="services_sort_by('overall_rating DESC');toggle_button_active('services_sort_by_overall_rating', 'services_sort_by_btn')"
+                      class="btn services_sort_by_btn">Rating</button>
+              <button id="services_sort_by_name"
+                      ng-click="services_sort_by('name ASC');toggle_button_active('services_sort_by_name', 'services_sort_by_btn')"
+                      class="btn services_sort_by_btn">Alphabetical</button>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;<i ng-show="service.name == 'venues'" class="fa fa-users"></i>&nbsp;&nbsp;
             <div class="btn-group" ng-show="service.name == 'venues'">
-              <button ng-repeat="venue_size in venue_sizes" ng-click="filter_by_venue_size($event)" class="btn">{{venue_size}}</button>
+              <button id="filter_by_venue_size_{{ $index }}"
+                      ng-repeat="venue_size in venue_sizes"
+                      ng-click="filter_by_venue_size($event); toggle_button_active('filter_by_venue_size_'+$index, 'filter_by_venue_size_btn')"
+                      class="btn filter_by_venue_size_btn">{{venue_size}}</button>
             </div>
             <hr ng-show="service.name == 'venues'">
             <i class="fa fa-coffee" ng-show="service.name == 'venues'"></i>&nbsp;&nbsp;
             
             <div class="btn-group" ng-show="service.name == 'venues'">
-              <button ng-click="filter_by_venue_type('wedding_celebrations')" class="btn">Weddings</button>
-              <button ng-click="filter_by_venue_type('business_functions')" class="btn">Corporate Events</button>
-              <button ng-click="filter_by_venue_type('party_and_dance')" class="btn">Parties</button>
-              <button ng-click="filter_by_venue_type('dinner_and_dance')" class="btn">Dinner and Dance</button>
-              <button ng-click="filter_by_venue_type('kids')" class="btn">Kids</button>
-              <button ng-click="filter_by_venue_type('others')" class="btn">Others</button>
+              <button id="filter_by_venue_type_0" ng-click="filter_by_venue_type('wedding_celebrations'); toggle_button_active('filter_by_venue_type_0','filter_by_venue_type_btn')" class="btn filter_by_venue_type_btn">Weddings</button>
+              <button id="filter_by_venue_type_1" ng-click="filter_by_venue_type('business_functions'); toggle_button_active('filter_by_venue_type_1','filter_by_venue_type_btn')" class="btn filter_by_venue_type_btn">Corporate Events</button>
+              <button id="filter_by_venue_type_2" ng-click="filter_by_venue_type('party_and_dance'); toggle_button_active('filter_by_venue_type_2','filter_by_venue_type_btn')" class="btn filter_by_venue_type_btn">Parties</button>
+              <button id="filter_by_venue_type_3" ng-click="filter_by_venue_type('dinner_and_dance'); toggle_button_active('filter_by_venue_type_3','filter_by_venue_type_btn')" class="btn filter_by_venue_type_btn">Dinner and Dance</button>
+              <button id="filter_by_venue_type_4" ng-click="filter_by_venue_type('kids'); toggle_button_active('filter_by_venue_type_4','filter_by_venue_type_btn')" class="btn filter_by_venue_type_btn">Kids</button>
+              <button id="filter_by_venue_type_5" ng-click="filter_by_venue_type('others'); toggle_button_active('filter_by_venue_type_5','filter_by_venue_type_btn')" class="btn filter_by_venue_type_btn">Others</button>
             </div>
           </div>
           <br>
@@ -120,10 +129,13 @@
                   </div>
                 </div>
                 <div ng-hide="provider.provider_pictures.length == 0">
-                  <div class="span4 thumbnails"><a  ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
-                    <div class="service-provider-empty-image" ng-show="provider.provider_pictures.length == 0"></div>
-                    <img nailthumb width="195" height="145" method="crop" ng-src="{{ provider.provider_pictures[0].avatar_url }}" >
-                  </a></div>
+
+                  <div class="span4 thumbnails">
+                    <a ng-hide="provider.priceplan.code == 'basic'" ng-href="/#/provider/{{ provider.id }}/{{ service.name }} " class="thumbnail">
+                      <div class="service-provider-empty-image" ng-show="provider.provider_pictures.length == 0"></div>
+                      <img nailthumb width="195" height="145" method="crop" ng-src="{{ provider.provider_pictures[0].avatar_url }}" >
+                    </a>
+                  </div>
                   <div class="span8">
                     <h4 class="title"><a ng-href="/#/provider/{{ provider.id }}/{{ service.name }} ">{{ provider.name }}</a><i ng-show="service.name == 'venues'" class="fa fa-users"></i><span ng-show="service.name == 'venues'" class="service_venue_size">{{ provider.venue_size }}</span></h4>
                     <p class="listing-desc-div" ng-bind-html-unsafe="provider.profile_description | splitter:0"></p>
