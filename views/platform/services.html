@@ -120,7 +120,7 @@
                         <custom-rating value="provider.overall_rating" max="5" readOnly="true"></custom-rating>
                       </div>
 
-                      <div class="span6 listing-desc-details-right">
+                      <div class="span6 listing-desc-details-right" ng-hide=" provider.priceplan.code == 'basic' ">
                         <a ng-show="requestsInCart[provider.id] == null" href ng-click="requestQuote(provider)" class="btn btn-warning" tooltip="A quote request email will be sent to this vendor" tooltip-placement="right">Request Quote</a>
                         <span ng-show="requestsInCart[provider.id] != null" href ng-click="unRequestQuote(provider)" class="btn btn-info">Quote Requested</span>
                       </div>
@@ -145,7 +145,7 @@
                         <custom-rating value="provider.overall_rating" max="5" readOnly="true"></custom-rating>
                       </div>
 
-                      <div class="span6 listing-desc-details-right">
+                      <div class="span6 listing-desc-details-right"  ng-hide=" provider.priceplan.code == 'basic' ">
                         <a ng-show="requestsInCart[provider.id] == null" href ng-click="requestQuote(provider)" class="btn btn-warning" tooltip="A quote request email will be sent to this vendor" tooltip-placement="right">Request Quote</a>
                         <span ng-show="requestsInCart[provider.id] != null" href ng-click="unRequestQuote(provider)" class="btn btn-info">Quote Requested</span>
                       </div>
