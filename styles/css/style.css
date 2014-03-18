@@ -25,6 +25,13 @@ body {
 	text-align:right;	
 }
 
+.category-nav-div-top .pull-right a{
+	background-color: #FB893F!important;
+	color: white!important;
+	
+}
+
+
 .text-slash{
 	text-decoration: line-through;
 	color: #666;
