@@ -13,7 +13,7 @@
   </div>
 
   <div class="control-group" ng-show="selected_service.name == 'venues'">
-    <label class="control-label" for="inputService">How many person can your place fit?</label>
+    <label class="control-label" for="inputService">How many people can your venue cater to?</label>
     <div class="controls">
       <select ng-model="form_object.venue_size" name="venue_size" ng-required="selected_service.name == 'venues'" ng-options="venue_size for venue_size in venue_sizes"></select>
     </div>
@@ -57,7 +57,7 @@
 
   <hr>
 
-  <h4>Upload Pictures</h4>
+  <h4>Upload Photos</h4>
 
   <div class="control-group" ng-show="pricingplan != 'basic' && (form_object.provider_pictures == null || form_object.provider_pictures.length < 4)">
     <div class="fileupload-div" data-provides="fileupload">
@@ -76,7 +76,7 @@
   <div class="control-group">
     <span ng-hide="pricingplan == 'basic'">You can only upload up to 4 photos</span>
 
-    <span ng-show="pricingplan == 'basic'">You are unable to upload picture with a basic plan. <a href="/#/account.pricing">Upgrade to premium!</a></span>
+    <span ng-show="pricingplan == 'basic'">You are unable to upload photos with a Free plan. <a href="/#/account.pricing">Upgrade your subscription!</a></span>
 
   </div>
 

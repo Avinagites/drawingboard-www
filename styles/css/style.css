@@ -12,7 +12,16 @@ body {
 	margin-top: 0px;
 }
 
-
+.text-strike{
+	text-decoration: line-through;
+	
+}
+.pricing-text-linethrough{
+	text-decoration: line-through;
+display: inline-block;
+margin: 0px 5px 0px 0px;
+font-size: 14px;
+}
 
 .push-left{
 	float: left;
@@ -786,6 +795,14 @@ form label {
 }
 .pricing-table:hover {
 	box-shadow: 0 0 0px 2px rgba(0, 0, 0, 0.5);
+	
+	border-bottom: 0 none;
+z-index: 9100;
+	position: relative;
+}
+
+.standard-package{
+	
 	transform: scale(1.04, 1.05);
 	-webkit-transform: scale(1.04, 1.05);
 	-moz-transform: scale(1.04, 1.05);
@@ -795,7 +812,6 @@ form label {
 	z-index: 9000;
 	position: relative;
 }
-
 
 
 /* .pricing-table-intro-col
@@ -1101,7 +1117,7 @@ sub, sup {
 		margin-top:20px;
 	}
 }
-@media(max-width:400px){
+@media(max-width:480px){
 	.btn {
 		padding: 5px;
 	}
