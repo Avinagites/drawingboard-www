@@ -9,10 +9,11 @@
   <div class="control-group">
     <label class="control-label" for="inputDate">Date*</label>
     <div class="controls">
-      <input type="text" ng-model="form_object.date" name="date" required
-             datepicker-popup="d/MM/yyyy" show-weeks="false"
-             min="date_for_tomorrow"
-             id="inputDate" placeholder="DD/MM/YYYY" class="span8">
+      <div style="display:inline-block;">
+        <div class="" ng-model="form_object.date" name="date" required >
+          <datepicker min="date_for_tomorrow" show-weeks="false"></datepicker>
+        </div>
+      </div>
     </div>
   </div>
 
